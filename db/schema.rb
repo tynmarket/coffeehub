@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_061229) do
+ActiveRecord::Schema.define(version: 2018_06_27_073428) do
+
+  create_table "coffees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "site_id", null: false
+    t.string "path", null: false
+    t.string "country", null: false
+    t.string "area_or_factory", null: false
+    t.integer "roast", null: false
+    t.text "taste", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country"], name: "index_coffees_country"
+    t.index ["created_at"], name: "index_coffees_created_at"
+    t.index ["roast"], name: "index_coffees_roast"
+    t.index ["site_id"], name: "index_coffees_site_id"
+  end
 
   create_table "sites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
