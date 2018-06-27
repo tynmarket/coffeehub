@@ -18,6 +18,7 @@ end
 
 group :development do
   gem 'rspec-rails'
+  gem 'seed-fu'
   gem 'spring'
 end
 
