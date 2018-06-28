@@ -1,0 +1,40 @@
+# https://circleci.com/docs/2.0/language-ruby/
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+
+    steps:
+      - checkout
+
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+            - coffeehub-bundle-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: bundle install
+          command: bundle install --path vendor/bundle
+
+      # Store bundle cache
+      - save_cache:
+          key: coffeehub-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      # Only necessary if app uses webpacker or yarn in some other way
+      - restore_cache:
+          keys:
+            - coffeehub-yarn-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: yarn install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: coffeehub-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
