@@ -16,7 +16,7 @@ jobs:
 
       - run:
           name: bundle install
-          command: bundle install --path vendor/bundle
+          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       # Store bundle cache
       - save_cache:
@@ -38,3 +38,8 @@ jobs:
           key: coffeehub-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+
+      # Run stylelint
+      - run:
+          name: yarn run stylelint
+          command: yarn run stylelint
