@@ -4,4 +4,12 @@
   @media screen and (min-width: $tablet) {
     height: 4rem;
   }
+
+  .header-inner {
+    @media screen and (min-width: $tablet) {
+      margin-left: auto;
+      margin-right: auto;
+      width: $container-width;
+    }
+  }
 }
