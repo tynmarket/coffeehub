@@ -1,8 +1,8 @@
 .header {
-  height: 3rem;
+  height: 48px;
 
   @media screen and (min-width: $tablet) {
-    height: 4rem;
+    height: 64px;
   }
 
   .header-inner {
