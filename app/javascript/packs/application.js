@@ -9,4 +9,4 @@
 
 console.log('Hello World from Webpacker')
 
-import './hello_react'
+//import './hello_react'
