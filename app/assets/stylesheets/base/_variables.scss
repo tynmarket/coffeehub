@@ -1,11 +1,15 @@
-// breakpoints from https://bulma.io/documentation/overview/responsiveness/
+// Breakpoints from https://bulma.io/documentation/overview/responsiveness/
 $mobile: 768px;
 $tablet: 769px;
 $desktop: 1024px;
 
 $container-width: 1000px;
 
-$font-l:   1.6rem;
+// Typography https://coliss.com/articles/build-websites/operation/css/css-font-sizing-by-ire.html
+$base-font-size: 62.5%;
+
+$font-size-l:   1.6rem;
+$font-size-m:   1.4rem;
 
 $color-primary: #8b4513;
 $color-primary-dark: #5e2f0d;
