@@ -1,0 +1,7 @@
+.sidebar {
+  width: 300px;
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}

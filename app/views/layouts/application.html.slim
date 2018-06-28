@@ -13,6 +13,8 @@ html
       .header-inner
         | ヘッダー
     .container
-      main
-        section.content
+      main.content
+        section
           = yield
+      aside.sidebar
+        | サイドバー
