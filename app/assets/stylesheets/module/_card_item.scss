@@ -1,0 +1,27 @@
+.card-item {
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  border: 1px solid $color-border;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  line-height: 2rem;
+
+  .card-item-shop {
+    flex: 1;
+  }
+
+  .card-item-bean {
+    flex: 2;
+  }
+
+  .card-item-title {
+    margin-bottom: 0.4rem;
+    color: $color-primary-dark;
+    font-weight: bold;
+  }
+
+  .card-item-taste {
+    color: $color-black;
+  }
+}
