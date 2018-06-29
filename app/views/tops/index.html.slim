@@ -1,7 +1,11 @@
 h1.section-title
   | 新着コーヒー豆一覧
 div
-  - 10.times
+  - (1..10).each do |i|
+    - if i == 5
+      .section-arrival
+        span.section-arrival-title
+          | 6月入荷のコーヒー
     article.card-item
       .card-item-left
         .card-item-cup-and-shop
