@@ -23,5 +23,7 @@
 
   .card-item-taste {
     color: $color-black;
+    max-height: 8rem;
+    overflow: hidden;
   }
 }
