@@ -18,6 +18,25 @@ $card-item-line-height: 2rem;
     flex: 2;
   }
 
+  .card-item-cup-wrapper {
+    .card-item-cup {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-bottom: -0.5rem;
+    }
+  }
+
+  .card-item-coffee-bean-wrapper {
+    display: inline-block;
+    padding: 0.8rem 0.4rem 0 0.4rem;
+
+    .card-item-coffee-bean {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-bottom: -0.25rem;
+    }
+  }
+
   .card-item-title {
     margin-bottom: 0.4rem;
     color: $color-primary-dark;
