@@ -10,11 +10,11 @@ $card-item-line-height: 2rem;
   line-height: $card-item-line-height;
   height: 10.5rem;
 
-  .card-item-shop {
+  .card-item-left {
     flex: 1;
   }
 
-  .card-item-bean {
+  .card-item-right {
     flex: 2;
   }
 
@@ -35,6 +35,10 @@ $card-item-line-height: 2rem;
       height: 2.4rem;
       margin-bottom: -0.25rem;
     }
+  }
+
+  .card-item-roast {
+    color: $color-accent;
   }
 
   .card-item-title {
