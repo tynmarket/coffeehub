@@ -11,11 +11,27 @@ $card-item-line-height: 2rem;
   height: 10.5rem;
 
   .card-item-left {
-    flex: 1;
+    width: 33.3%;
+    padding-left: 0.25rem;
   }
 
   .card-item-right {
-    flex: 2;
+    width: 66.7%;
+    padding-left: 0.25rem;
+  }
+
+  .card-item-cup-and-shop,
+  .card-item-coffee-bean-and-roast {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-item-cup-and-shop {
+    margin-bottom: 0.5rem;
+  }
+
+  .card-item-shop {
+    overflow: hidden;
   }
 
   .card-item-cup-wrapper {
@@ -28,7 +44,7 @@ $card-item-line-height: 2rem;
 
   .card-item-coffee-bean-wrapper {
     display: inline-block;
-    padding: 0.8rem 0.4rem 0 0.4rem;
+    padding: 0 0.4rem 0 0.4rem;
 
     .card-item-coffee-bean {
       width: 2.4rem;
