@@ -11,10 +11,14 @@ html
   body
     header.header
       .header-inner
-        | ヘッダー
+      a.header-logo href="/"
+        img src=image_path("icon.svg")
+        span.header-title
+          | COFFEE HUB
     .container
       aside.sidebar
         | サイドバー
       main.content
         section
           = yield
+    footer.footer

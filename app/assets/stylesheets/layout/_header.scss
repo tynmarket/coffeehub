@@ -1,15 +1,26 @@
 .header {
   height: 48px;
+  border-bottom: 1px solid $color-border;
 
   @media screen and (min-width: $tablet) {
     height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    width: $container-width;
   }
 
-  .header-inner {
-    @media screen and (min-width: $tablet) {
-      margin-left: auto;
-      margin-right: auto;
-      width: $container-width;
+  .header-logo {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+
+    @media screen and (max-width: $mobile) {
+      padding-left: 1rem;
     }
+  }
+
+  .header-title {
+    margin-left: 0.5rem;
+    font-size: 2rem;
   }
 }
