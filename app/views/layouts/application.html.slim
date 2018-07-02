@@ -19,8 +19,15 @@ html
       aside.sidebar
         | サイドバー
       main.content
-        section
-          | ピックアップ
+        section.pickup
+          img.pickup-image src=image_path("mui.jpg")
+          span.pickup-note
+            | ピックアップ
+          .pickup-area
+            h1.pickup-shop
+              | Mui
+            p.pickup-text
+              | 最高品質のコーヒー豆と確かな焙煎の技術。元住吉の実店舗では美味しいケーキも。
         section.main-content
           = yield
     footer.footer
