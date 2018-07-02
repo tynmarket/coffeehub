@@ -1,6 +1,7 @@
 $card-item-line-height: 2rem;
 
 .card-item {
+  position: relative;
   margin-bottom: 1.5rem;
   padding: 0.8rem;
   border: 1px solid $color-border;
