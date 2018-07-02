@@ -20,3 +20,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* stylelint-enable selector-list-comma-newline-after, declaration-block-no-shorthand-property-overrides */
+
+ol, ul {
+  list-style: none;
+}

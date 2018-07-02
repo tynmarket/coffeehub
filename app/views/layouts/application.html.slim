@@ -10,14 +10,34 @@ html
     = javascript_pack_tag 'application'
   body
     header.header
-      .header-inner
       a.header-logo href="/"
         img src=image_path("icon.svg")
         span.header-title
           | COFFEE HUB
     .container
       aside.sidebar
-        | サイドバー
+        section.sidebar-content
+          h3.section-roast-title
+            | ロースト度合いから選ぶ
+          ul
+            li.sidebar-item
+              a href="/"
+                | シナモンロースト
+            li.sidebar-item
+              a href="/"
+                | ミディアムロースト
+            li.sidebar-item
+              a href="/"
+                | ハイロースト
+            li.sidebar-item
+              a href="/"
+                | シティロースト
+            li.sidebar-item
+              a href="/"
+                | フルシティロースト
+            li.sidebar-item
+              a href="/"
+                | フレンチロースト
       main.content
         section.pickup
           img.pickup-image src=image_path("mui.jpg")

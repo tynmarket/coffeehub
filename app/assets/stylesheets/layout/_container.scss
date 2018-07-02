@@ -3,4 +3,8 @@
   margin-right: auto;
   max-width: $container-width;
   display: flex;
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 2rem;
+  }
 }
