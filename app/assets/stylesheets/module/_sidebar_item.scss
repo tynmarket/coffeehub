@@ -1,6 +1,42 @@
 .sidebar-item {
   margin-right: 1rem;
-  padding: 2rem 0;
-  padding-left: 2rem;
   border-bottom: 1px solid $color-border;
+
+  &:hover {
+    background-color: $color-gray-transparent;
+  }
+
+  & > a {
+    display: block;
+    padding: 2rem 0;
+    padding-left: 2rem;
+
+    &:hover {
+      font-weight: bold;
+    }
+
+    &.roast-cinnamon:hover {
+      color: $color-cinnamon-roast;
+    }
+
+    &.roast-medium:hover {
+      color: $color-medium-roast;
+    }
+
+    &.roast-high:hover {
+      color: $color-high-roast;
+    }
+
+    &.roast-city:hover {
+      color: $color-city-roast;
+    }
+
+    &.roast-fullcity:hover {
+      color: $color-fullcity-roast;
+    }
+
+    &.roast-french:hover {
+      color: $color-french-roast;
+    }
+  }
 }
