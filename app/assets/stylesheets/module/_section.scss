@@ -24,7 +24,7 @@
     padding-right: 1rem;
   }
 
-  &:before {
+  &::before {
     content: "";
     display: block;
     position: absolute;
