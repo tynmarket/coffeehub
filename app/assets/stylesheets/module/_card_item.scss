@@ -41,6 +41,7 @@ $card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-si
   }
 
   .card-item-shop {
+    max-height: $card-item-line-height * 3;
     overflow: hidden;
   }
 
