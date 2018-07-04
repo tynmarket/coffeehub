@@ -1,6 +1,7 @@
 javascript:
   function toggleRoastList() {
     document.querySelector('.roast-select').classList.toggle("show");
+    document.querySelector('.roast-select-overlay').classList.toggle("show");
   }
 
 .section-title-and-roast-select
@@ -29,6 +30,7 @@ javascript:
       li.roast-list-item
         a.coffee-color-french href="/"
           | フレンチロースト
+  .roast-select-overlay onClick="toggleRoastList()"
 div
   - (1..10).each do |i|
     - if i == 5
