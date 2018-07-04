@@ -24,75 +24,75 @@ $card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-si
     flex: 2;
     padding-left: 0.25rem;
   }
+}
 
-  .card-item-cup-and-shop,
-  .card-item-coffee-bean-and-roast {
-    display: flex;
-    align-items: center;
+.card-item-cup-and-shop,
+.card-item-coffee-bean-and-roast {
+  display: flex;
+  align-items: center;
+}
+
+.card-item-cup-and-shop {
+  margin-bottom: 0.75rem;
+}
+
+.card-item-shop,
+.card-item-roast {
+  padding-left: 0.5rem;
+}
+
+.card-item-shop {
+  max-height: $card-item-line-height * 3;
+  overflow: hidden;
+}
+
+.card-item-cup-wrapper {
+  .card-item-cup {
+    width: $card-item-cup-size;
+    height: $card-item-cup-size;
+    margin-bottom: -0.5rem;
+    fill: $color-black;
   }
+}
 
-  .card-item-cup-and-shop {
-    margin-bottom: 0.75rem;
+.card-item-coffee-bean-wrapper {
+  display: inline-block;
+  padding-right: $card-item-coffee-bean-padding;
+  padding-left: $card-item-coffee-bean-padding;
+
+  .card-item-coffee-bean {
+    width: $card-item-coffee-bean-size;
+    height: $card-item-coffee-bean-size;
+    margin-bottom: -0.25rem;
   }
+}
 
-  .card-item-shop,
-  .card-item-roast {
-    padding-left: 0.5rem;
+.card-item-roast,
+.card-item-roast-sufix {
+  color: $color-accent;
+}
+
+.card-item-title {
+  margin-bottom: 0.4rem;
+  color: $color-primary-dark;
+  font-weight: bold;
+  max-height: $card-item-line-height * 2;
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet) {
+    max-height: $card-item-line-height * 1;
   }
+}
 
-  .card-item-shop {
-    max-height: $card-item-line-height * 3;
-    overflow: hidden;
-  }
+.card-item-area {
+  margin-left: 1rem;
+}
 
-  .card-item-cup-wrapper {
-    .card-item-cup {
-      width: $card-item-cup-size;
-      height: $card-item-cup-size;
-      margin-bottom: -0.5rem;
-      fill: $color-black;
-    }
-  }
+.card-item-taste {
+  max-height: $card-item-line-height * 3;
+  overflow: hidden;
 
-  .card-item-coffee-bean-wrapper {
-    display: inline-block;
-    padding-right: $card-item-coffee-bean-padding;
-    padding-left: $card-item-coffee-bean-padding;
-
-    .card-item-coffee-bean {
-      width: $card-item-coffee-bean-size;
-      height: $card-item-coffee-bean-size;
-      margin-bottom: -0.25rem;
-    }
-  }
-
-  .card-item-roast,
-  .card-item-roast-sufix {
-    color: $color-accent;
-  }
-
-  .card-item-title {
-    margin-bottom: 0.4rem;
-    color: $color-primary-dark;
-    font-weight: bold;
-    max-height: $card-item-line-height * 2;
-    overflow: hidden;
-
-    @media screen and (min-width: $tablet) {
-      max-height: $card-item-line-height * 1;
-    }
-  }
-
-  .card-item-area {
-    margin-left: 1rem;
-  }
-
-  .card-item-taste {
-    max-height: $card-item-line-height * 3;
-    overflow: hidden;
-
-    @media screen and (min-width: $tablet) {
-      max-height: $card-item-line-height * 4;
-    }
+  @media screen and (min-width: $tablet) {
+    max-height: $card-item-line-height * 4;
   }
 }
