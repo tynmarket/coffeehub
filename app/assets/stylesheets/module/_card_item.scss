@@ -12,12 +12,13 @@ $card-item-line-height: 2rem;
   height: 10.5rem;
 
   .card-item-left {
-    width: 33.3%;
-    padding-left: 0.25rem;
+    flex: 1;
+    padding-right: 0.25rem;
+    word-break: keep-all;
   }
 
   .card-item-right {
-    width: 66.7%;
+    flex: 2;
     padding-left: 0.25rem;
   }
 
@@ -28,7 +29,7 @@ $card-item-line-height: 2rem;
   }
 
   .card-item-cup-and-shop {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .card-item-shop {
@@ -38,8 +39,8 @@ $card-item-line-height: 2rem;
 
   .card-item-cup-wrapper {
     .card-item-cup {
-      width: 3.2rem;
-      height: 3.2rem;
+      width: 3rem;
+      height: 3rem;
       margin-bottom: -0.5rem;
       fill: $color-black;
     }
@@ -50,8 +51,8 @@ $card-item-line-height: 2rem;
     padding: 0 0.4rem 0 0.4rem;
 
     .card-item-coffee-bean {
-      width: 2.4rem;
-      height: 2.4rem;
+      width: 2rem;
+      height: 2rem;
       margin-bottom: -0.25rem;
     }
   }
