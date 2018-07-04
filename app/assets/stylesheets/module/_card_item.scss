@@ -24,6 +24,11 @@ $card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-si
     flex: 2;
     padding-left: 0.25rem;
   }
+
+  &:hover {
+    transition: border-color 0.25s;
+    border-color: $color-accent;
+  }
 }
 
 .card-item-cup-and-shop,
