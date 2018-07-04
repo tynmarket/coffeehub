@@ -18,13 +18,13 @@
   text-align: center;
   visibility: hidden;
   opacity: 0;
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
-  &.show{
+  &.show {
     visibility: visible;
     opacity: 1;
-    transition: opacity .15s linear;
-    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+    transition: opacity 0.15s linear;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .roast-select-title {
