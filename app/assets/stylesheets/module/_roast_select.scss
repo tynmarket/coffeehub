@@ -1,0 +1,59 @@
+.roast-select-button {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.5rem;
+  border-bottom: 1px solid;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.roast-select {
+  position: absolute;
+  top: 2rem;
+  z-index: 1;
+  background-color: $color-white;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .1s ease-in-out;
+
+  &.show{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .15s linear;
+    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+  }
+
+  .roast-select-title {
+    background-color: $color-border;
+    padding: 1rem 0;
+    font-weight: bold;
+    border-top-right-radius: $border-radius-size;
+    border-top-left-radius: $border-radius-size;
+  }
+
+  .roast-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .roast-list-item {
+    width: 50%;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f9e5d7;
+
+    &:nth-child(odd) {
+      border-right: 1px solid #f9e5d7;
+    }
+
+    & > a {
+      display: inline-block;
+      width: 100%;
+      padding: 2rem 0;
+    }
+  }
+}

@@ -1,5 +1,34 @@
-h1.section-title
-  | 新着コーヒー豆一覧
+javascript:
+  function toggleRoastList() {
+    document.querySelector('.roast-select').classList.toggle("show");
+  }
+
+.section-title-and-roast-select
+  h1.section-title
+    | 新着コーヒー豆一覧
+  span.roast-select-button onClick="toggleRoastList()" 絞り込み
+  .roast-select
+    div.roast-select-title
+      | ロースト度合い
+    ul.roast-list
+      li.roast-list-item
+        a.coffee-color-cinnamon href="/"
+          | シナモンロースト
+      li.roast-list-item
+        a.coffee-color-medium href="/"
+          | ミディアムロースト
+      li.roast-list-item
+        a.coffee-color-high href="/"
+          | ハイロースト
+      li.roast-list-item
+        a.coffee-color-city href="/"
+          | シティロースト
+      li.roast-list-item
+        a.coffee-color-fullcity href="/"
+          | フルシティロースト
+      li.roast-list-item
+        a.coffee-color-french href="/"
+          | フレンチロースト
 div
   - (1..10).each do |i|
     - if i == 5
