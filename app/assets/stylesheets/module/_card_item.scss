@@ -25,9 +25,11 @@ $card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-si
     padding-left: 0.25rem;
   }
 
-  &:hover {
-    transition: border-color 0.25s;
-    border-color: $color-accent;
+  @media screen and (min-width: $tablet) {
+    &:hover {
+      transition: border-color 0.25s;
+      border-color: $color-accent;
+    }
   }
 }
 
