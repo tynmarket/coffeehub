@@ -1,4 +1,7 @@
 $card-item-line-height: 2rem;
+$card-item-cup-size: 3rem;
+$card-item-coffee-bean-size: 2rem;
+$card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-size) / 2;
 
 .card-item {
   position: relative;
@@ -32,15 +35,19 @@ $card-item-line-height: 2rem;
     margin-bottom: 0.75rem;
   }
 
+  .card-item-shop,
+  .card-item-roast {
+    padding-left: 0.5rem;
+  }
+
   .card-item-shop {
     overflow: hidden;
-    padding-left: 0.25rem;
   }
 
   .card-item-cup-wrapper {
     .card-item-cup {
-      width: 3rem;
-      height: 3rem;
+      width: $card-item-cup-size;
+      height: $card-item-cup-size;
       margin-bottom: -0.5rem;
       fill: $color-black;
     }
@@ -48,11 +55,12 @@ $card-item-line-height: 2rem;
 
   .card-item-coffee-bean-wrapper {
     display: inline-block;
-    padding: 0 0.4rem 0 0.4rem;
+    padding-right: $card-item-coffee-bean-padding;
+    padding-left: $card-item-coffee-bean-padding;
 
     .card-item-coffee-bean {
-      width: 2rem;
-      height: 2rem;
+      width: $card-item-coffee-bean-size;
+      height: $card-item-coffee-bean-size;
       margin-bottom: -0.25rem;
     }
   }
@@ -60,10 +68,6 @@ $card-item-line-height: 2rem;
   .card-item-roast,
   .card-item-roast-sufix {
     color: $color-accent;
-  }
-
-  .card-item-roast {
-    padding-left: 0.25rem;
   }
 
   .card-item-title {
