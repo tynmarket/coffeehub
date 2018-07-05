@@ -1,6 +1,8 @@
+$pickup-height: 232px;
+
 .pickup {
   position: relative;
-  height: 232px;
+  height: $pickup-height;
   margin-bottom: 2.5rem;
   overflow: hidden;
 
@@ -16,7 +18,8 @@
     width: auto;
     height: 100%;
 
-    @media screen and (min-width: $tablet) {
+    // 実画像の比率
+    @media screen and (min-width: $pickup-height * 2) {
       width: 100%;
       height: auto;
     }
