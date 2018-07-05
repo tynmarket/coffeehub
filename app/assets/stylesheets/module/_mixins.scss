@@ -1,0 +1,8 @@
+@mixin border-hover {
+  @media screen and (min-width: $tablet) {
+    &:hover {
+      transition: border-color 0.25s;
+      border-color: $color-accent;
+    }
+  }
+}

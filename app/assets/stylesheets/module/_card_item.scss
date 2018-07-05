@@ -4,6 +4,8 @@ $card-item-coffee-bean-size: 2rem;
 $card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-size) / 2;
 
 .card-item {
+  @include border-hover();
+
   position: relative;
   margin-bottom: 1.5rem;
   padding: 0.8rem;
@@ -23,13 +25,6 @@ $card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-si
   .card-item-right {
     flex: 2;
     padding-left: 0.25rem;
-  }
-
-  @media screen and (min-width: $tablet) {
-    &:hover {
-      transition: border-color 0.25s;
-      border-color: $color-accent;
-    }
   }
 }
 
