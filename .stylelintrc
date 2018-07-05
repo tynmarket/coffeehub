@@ -1,6 +1,7 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "color-hex-length": null
+    "color-hex-length": null,
+    "at-rule-no-unknown": null
   }
 }

@@ -14,6 +14,7 @@
 
   &.active {
     @include border-hover();
+
     border: 1px solid $color-border;
     color: $color-black;
     cursor: pointer;
