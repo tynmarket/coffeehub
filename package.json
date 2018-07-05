@@ -21,7 +21,7 @@
     "webpack-dev-server": "2.11.2"
   },
   "scripts": {
-    "tslint": "tslint app/javascript/packs/**/*.ts{,x}",
+    "tslint": "tslint --format stylish app/javascript/packs/**/*.ts{,x}",
     "stylelint": "stylelint app/assets/stylesheets"
   }
 }
