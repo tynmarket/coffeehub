@@ -39,7 +39,12 @@ jobs:
           paths:
             - ~/.cache/yarn
 
+      # Run tslint
+      - run:
+          name: yarn tslint
+          command: yarn tslint
+
       # Run stylelint
       - run:
-          name: yarn run stylelint
-          command: yarn run stylelint
+          name: yarn stylelint
+          command: yarn stylelint
