@@ -6,7 +6,7 @@
     height: 64px;
     margin-left: auto;
     margin-right: auto;
-    width: $container-width;
+    max-width: $container-width;
   }
 
   .header-logo {
