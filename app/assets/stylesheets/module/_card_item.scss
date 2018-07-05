@@ -74,6 +74,12 @@ $card-item-coffee-bean-padding: ($card-item-cup-size - $card-item-coffee-bean-si
   color: $color-accent;
 }
 
+.card-item-arrival-date {
+  margin-top: 0.75rem;
+  margin-left: $card-item-cup-size + $card-item-coffee-bean-padding + 0.25rem;
+  font-size: $font-size-s;
+}
+
 .card-item-title {
   margin-bottom: 0.4rem;
   color: $color-primary-dark;
