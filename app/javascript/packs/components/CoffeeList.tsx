@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Pagination } from "./Pagination";
 import { RoastList } from "./RoastList";
 
 export class CoffeeList extends React.Component<any, object> {
@@ -19,6 +20,7 @@ export class CoffeeList extends React.Component<any, object> {
           <RoastList />
           <div className="roast-select-overlay" />
         </div>
+        <Pagination prev={null} next={2} />
       </section>
     );
   }
