@@ -1,8 +1,12 @@
 import * as React from "react";
 
-export const RoastList: React.StatelessComponent<{}> = () => {
+interface Props {
+  open: boolean;
+}
+
+export const RoastList: React.StatelessComponent<Props> = (props) => {
   return (
-    <div className="roast-select">
+    <div className={`roast-select ${props.open ? "show" : null}`}>
       <div className="roast-select-title">
         ロースト度合い
       </div>

@@ -3,9 +3,24 @@ import { ListItem } from "./ListItem";
 import { Pagination } from "./Pagination";
 import { RoastList } from "./RoastList";
 
-export class CoffeeList extends React.Component<any, object> {
+interface State {
+  openRoastList: boolean;
+}
+
+export class CoffeeList extends React.Component<any, State> {
   constructor(props: any) {
     super(props);
+    this.state = { openRoastList: false };
+    this.openRoastList = this.openRoastList.bind(this);
+    this.closeRoastList = this.closeRoastList.bind(this);
+  }
+
+  public openRoastList() {
+    this.setState({openRoastList: true});
+  }
+
+  public closeRoastList() {
+    this.setState({openRoastList: false});
   }
 
   public render() {
@@ -34,11 +49,14 @@ export class CoffeeList extends React.Component<any, object> {
           <h1 className="section-title">
             新着コーヒー豆一覧
           </h1>
-          <span className="roast-select-button">
+          <span className="roast-select-button" onClick={this.openRoastList}>
             絞り込み
           </span>
-          <RoastList />
-          <div className="roast-select-overlay" />
+          <RoastList open={this.state.openRoastList} />
+          <div
+            className={`roast-select-overlay ${this.state.openRoastList ? "show" : null}`}
+            onClick={this.closeRoastList}
+          />
         </div>
         {list}
         <Pagination prev={null} next={2} />
