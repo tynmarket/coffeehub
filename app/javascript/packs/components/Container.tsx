@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Pickup } from "./Pickup"
-import { Sidebar } from "./Sidebar"
+import { CoffeeList } from "./CoffeeList";
+import { Pickup } from "./Pickup";
+import { Sidebar } from "./Sidebar";
 
 export const Container: React.StatelessComponent<{}> = () => {
   return (
@@ -8,6 +9,7 @@ export const Container: React.StatelessComponent<{}> = () => {
       <Sidebar />
       <main className="content">
         <Pickup />
+        <CoffeeList />
       </main>
     </div>
   );
