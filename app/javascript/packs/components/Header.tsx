@@ -2,6 +2,13 @@ import * as React from "react";
 
 export const Header: React.StatelessComponent<{}> = () => {
   return (
-    <div/>
+    <header className="header">
+      <a className="header-logo" href="/">
+        <img src="icon.svg" />
+        <span className="header-title">
+          COFEE HUB
+        </span>
+      </a>
+    </header>
   );
 };
