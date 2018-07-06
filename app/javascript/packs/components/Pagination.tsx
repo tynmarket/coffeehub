@@ -1,10 +1,5 @@
 import * as React from "react";
 
-interface Props {
-  prev: number;
-  next: number;
-}
-
 function link(page: number, text: string) {
   if (page != null) {
     return (
@@ -19,6 +14,11 @@ function link(page: number, text: string) {
       </a>
     );
   }
+}
+
+interface Props {
+  prev: number;
+  next: number;
 }
 
 export const Pagination: React.StatelessComponent<Props> = (props) => {
