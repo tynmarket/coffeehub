@@ -10,12 +10,12 @@ export class CoffeeList extends React.Component<any, object> {
 
   public render() {
     const list = [];
-    const stores = ["ROKUMEI COFFEE CO.", "Mui", "春木屋 月滴庵 Gettekian"];
+    const shops = ["ROKUMEI COFFEE CO.", "Mui", "春木屋 月滴庵 Gettekian"];
 
     for (let i = 0; i < 10; i++) {
       const num = Math.floor(Math.random() * Math.floor(3));
-      const store = stores[num];
-      list.push(<ListItem key={i} store={store} new={i < 2} />);
+      const shop = shops[num];
+      list.push(<ListItem key={i} shop={shop} new={i < 2} />);
 
       if (i === 5) {
         list.push(

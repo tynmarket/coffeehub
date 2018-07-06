@@ -11,7 +11,7 @@ function ribbon() {
 }
 
 interface Props {
-  store: string;
+  shop: string;
   new: boolean;
 }
 
@@ -28,7 +28,7 @@ export const ListItem: React.StatelessComponent<Props> = (props) => {
               </svg>
             </span>
             <span className="card-item-shop">
-              {props.store}
+              {props.shop}
             </span>
           </div>
           <div className="card-item-coffee-bean-and-roast">
