@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Coffee } from "../model/coffee";
 
 function ribbon() {
   return (
@@ -11,8 +12,7 @@ function ribbon() {
 }
 
 interface Props {
-  shop: string;
-  new: boolean;
+  coffee: Coffee;
 }
 
 export const ListItem: React.StatelessComponent<Props> = (props) => {
@@ -28,7 +28,7 @@ export const ListItem: React.StatelessComponent<Props> = (props) => {
               </svg>
             </span>
             <span className="card-item-shop">
-              {props.shop}
+              {props.coffee.shop}
             </span>
           </div>
           <div className="card-item-coffee-bean-and-roast">
@@ -38,30 +38,30 @@ export const ListItem: React.StatelessComponent<Props> = (props) => {
               </svg>
             </span>
             <span className="card-item-roast">
-              フルシティ
+              {props.coffee.roast}
             </span>
             <span className="card-item-roast-sufix hide-for-mobile">
               ロースト
             </span>
           </div>
           <div className="card-item-arrival-date hide-for-mobile">
-            7月3日入荷
+            {props.coffee.arrival_date}
           </div>
         </div>
         <div className="card-item-right">
           <h2 className="card-item-title">
             <span className="card-item-country">
-              エチオピア
+              {props.coffee.country}
             </span>
             <span className="card-item-area">
-              エル・インフェルト ウノ農園 ブルボン
+            {props.coffee.area}
             </span>
           </h2>
           <div className="card-item-taste">
-            グレープやプラムのほか、アップルのような爽やかな酸味やほんのりと赤ワインのような印象も口の中に残ります。様々なフレーバーを感じとれる、複雑なコーヒー。ジューシーで滑らかな舌触りも特徴的。
+          {props.coffee.taste}
           </div>
         </div>
-        {props.new ? ribbon() : null}
+        {props.coffee.new ? ribbon() : null}
       </a>
     </article>
   );

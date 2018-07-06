@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Coffee } from "../model/coffee";
 import { ListItem } from "./ListItem";
 import { Pagination } from "./Pagination";
 import { RoastList } from "./RoastList";
@@ -30,7 +31,16 @@ export class CoffeeList extends React.Component<any, State> {
     for (let i = 0; i < 10; i++) {
       const num = Math.floor(Math.random() * Math.floor(3));
       const shop = shops[num];
-      list.push(<ListItem key={i} shop={shop} new={i < 2} />);
+      const coffee: Coffee = {
+        area: "エル・インフェルト ウノ農園 ブルボン",
+        arrival_date: "7月3日",
+        country: "エチオピア",
+        new: (i < 2),
+        roast: "フルシティ",
+        shop,
+        taste: "グレープやプラムのほか、アップルのような爽やかな酸味やほんのりと赤ワインのような印象も口の中に残ります。様々なフレーバーを感じとれる、複雑なコーヒー。ジューシーで滑らかな舌触りも特徴的。",
+      };
+      list.push(<ListItem key={i} coffee={coffee} />);
 
       if (i === 5) {
         list.push(
