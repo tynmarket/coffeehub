@@ -13,6 +13,9 @@ AllCops:
     - 'vendor/**/*'
     - '.git/**/*'
 
+Style/AsciiComments:
+  Enabled: false
+
 Style/ClassAndModuleChildren:
   Enabled: false
 
