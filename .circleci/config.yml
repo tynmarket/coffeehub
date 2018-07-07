@@ -39,6 +39,11 @@ jobs:
           paths:
             - ~/.cache/yarn
 
+      # Run rubocop
+      - run:
+          name: bin/rubocop
+          command: bin/rubocop
+
       # Run tslint
       - run:
           name: yarn tslint

@@ -21,6 +21,7 @@ end
 
 group :development do
   gem 'rspec-rails'
+  gem 'rubocop', require: false
   gem 'seed-fu'
   gem 'spring'
 end
