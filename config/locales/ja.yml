@@ -28,6 +28,14 @@ ja:
           fullcity: フルシティ
           french: フレンチ
           italian: イタリアン
+  time:
+    am: 午前
+    formats:
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+      ms_ds_ja: "%-m月%-d日"
+    pm: 午後
   date:
     abbr_day_names:
     - 日
@@ -217,10 +225,3 @@ ja:
       last_word_connector: 、
       two_words_connector: 、
       words_connector: 、
-  time:
-    am: 午前
-    formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
-      long: "%Y/%m/%d %H:%M"
-      short: "%m/%d %H:%M"
-    pm: 午後
