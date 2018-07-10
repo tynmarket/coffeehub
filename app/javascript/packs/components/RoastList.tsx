@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
+import { path } from "../path/coffees_path";
 
 interface Props {
   open: boolean;
@@ -12,34 +14,34 @@ export const RoastList: React.StatelessComponent<Props> = (props) => {
       </div>
       <ul className="roast-list">
         <li className="roast-list-item">
-          <a className="coffee-color-cinnamon" href="/">
+          <Link to={path.cinnamonRoast} className="coffee-color-cinnamon">
             シナモンロースト
-          </a>
+          </Link>
         </li>
         <li className="roast-list-item">
-          <a className="coffee-color-medium" href="/">
+          <Link to={path.mediumRoast} className="coffee-color-medium">
             ミディアムロースト
-          </a>
+          </Link>
         </li>
         <li className="roast-list-item">
-          <a className="coffee-color-high" href="/">
+          <Link to={path.highRoast} className="coffee-color-high">
             ハイロースト
-          </a>
+          </Link>
         </li>
         <li className="roast-list-item">
-          <a className="coffee-color-city" href="/">
+          <Link to={path.cityRoast} className="coffee-color-city">
             シティロースト
-          </a>
+          </Link>
         </li>
         <li className="roast-list-item">
-          <a className="coffee-color-fullcity" href="/">
+          <Link to={path.fullcityRoast} className="coffee-color-fullcity">
             フルシティロースト
-          </a>
+          </Link>
         </li>
         <li className="roast-list-item">
-          <a className="rcoffee-color-french" href="/">
+          <Link to={path.frenchRoast} className="coffee-color-french">
             フレンチロースト
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

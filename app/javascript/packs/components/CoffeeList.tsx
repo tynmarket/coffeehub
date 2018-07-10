@@ -26,6 +26,7 @@ export class CoffeeList extends React.Component<any, State> {
   public componentWillReceiveProps(nextProps) {
     const roast = nextProps.match.params.roast;
     this.fetchCoffees(roast);
+    this.setState({openRoastList: false});
   }
 
   public componentDidMount() {
