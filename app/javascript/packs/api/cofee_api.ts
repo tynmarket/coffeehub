@@ -1,11 +1,19 @@
 import axios from "axios";
 import { Coffee } from "../model/coffee";
 
-const ENDPOINT_COFEES = "/api//coffees";
+const ENDPOINT_COFEES = "/api/coffees";
 
-export async function getCoffees(): Promise<Coffee[]> {
+function endpoint(roast: string): string {
+  if (roast != null) {
+    return `${ENDPOINT_COFEES}/roast/${roast}`;
+  } else {
+    return ENDPOINT_COFEES;
+  }
+}
+
+export async function getCoffees(roast: string = null): Promise<Coffee[]> {
   try {
-    const response = await axios.get(ENDPOINT_COFEES);
+    const response = await axios.get(endpoint(roast));
     return response.data as Coffee[];
   } catch (error) {
     // TODO: error report

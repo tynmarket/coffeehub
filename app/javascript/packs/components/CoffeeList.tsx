@@ -17,22 +17,20 @@ export class CoffeeList extends React.Component<any, State> {
       coffees: [],
       openRoastList: false,
     };
+
+    this.fetchCoffees = this.fetchCoffees.bind(this);
     this.openRoastList = this.openRoastList.bind(this);
     this.closeRoastList = this.closeRoastList.bind(this);
   }
 
+  public componentWillReceiveProps(nextProps) {
+    const roast = nextProps.match.params.roast;
+    this.fetchCoffees(roast);
+  }
+
   public componentDidMount() {
-    getCoffees().then((coffees) => {
-      this.setState({coffees});
-    });
-  }
-
-  public openRoastList() {
-    this.setState({openRoastList: true});
-  }
-
-  public closeRoastList() {
-    this.setState({openRoastList: false});
+    const roast = this.props.match.params.roast;
+    this.fetchCoffees(roast);
   }
 
   public render() {
@@ -72,5 +70,19 @@ export class CoffeeList extends React.Component<any, State> {
         <Pagination prev={null} next={2} />
       </section>
     );
+  }
+
+  private fetchCoffees(roast: string) {
+    getCoffees(roast).then((coffees) => {
+      this.setState({coffees});
+    });
+  }
+
+  private openRoastList() {
+    this.setState({openRoastList: true});
+  }
+
+  private closeRoastList() {
+    this.setState({openRoastList: false});
   }
 }

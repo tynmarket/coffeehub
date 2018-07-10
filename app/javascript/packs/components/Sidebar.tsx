@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
+import { path } from "../path/coffees_path";
 
 export const Sidebar: React.StatelessComponent<{}> = () => {
   return (
@@ -9,34 +11,34 @@ export const Sidebar: React.StatelessComponent<{}> = () => {
         </h3>
         <ul>
           <li className="sidebar-item">
-            <a className="roast-cinnamon" href="/">
+            <Link to={path.cinnamonRoast} className="roast-cinnamon">
               シナモンロースト
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a className="roast-medium" href="/">
+            <Link to={path.mediumRoast} className="roast-medium">
               ミディアムロースト
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a className="roast-high" href="/">
+            <Link to={path.highRoast} className="roast-high">
               ハイロースト
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a className="roast-city" href="/">
+            <Link to={path.cityRoast} className="roast-city">
               シティロースト
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a className="roast-fullcity" href="/">
+            <Link to={path.fullcityRoast} className="roast-fullcity">
               フルシティロースト
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a className="roast-french" href="/">
+            <Link to={path.frenchRoast} className="roast-french">
               フレンチロースト
-            </a>
+            </Link>
           </li>
         </ul>
       </section>
