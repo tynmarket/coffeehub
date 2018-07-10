@@ -1,19 +1,30 @@
 import * as React from "react";
+import { getCoffees } from "../api/cofee_api";
 import { Coffee } from "../model/coffee";
 import { ListItem } from "./ListItem";
 import { Pagination } from "./Pagination";
 import { RoastList } from "./RoastList";
 
 interface State {
+  coffees: Coffee[];
   openRoastList: boolean;
 }
 
 export class CoffeeList extends React.Component<any, State> {
   constructor(props: any) {
     super(props);
-    this.state = { openRoastList: false };
+    this.state = {
+      coffees: [],
+      openRoastList: false,
+    };
     this.openRoastList = this.openRoastList.bind(this);
     this.closeRoastList = this.closeRoastList.bind(this);
+  }
+
+  public componentDidMount() {
+    getCoffees().then((coffees) => {
+      this.setState({coffees});
+    });
   }
 
   public openRoastList() {
@@ -26,25 +37,14 @@ export class CoffeeList extends React.Component<any, State> {
 
   public render() {
     const list = [];
-    const shops = ["ROKUMEI COFFEE CO.", "Mui", "春木屋 月滴庵 Gettekian"];
+    const coffees = this.state.coffees;
 
-    for (let i = 0; i < 10; i++) {
-      const num = Math.floor(Math.random() * Math.floor(3));
-      const shop = shops[num];
-      const coffee: Coffee = {
-        area: "エル・インフェルト ウノ農園 ブルボン",
-        arrival_date: "7月3日",
-        country: "エチオピア",
-        new: (i < 2),
-        roast: "フルシティ",
-        shop,
-        taste: "グレープやプラムのほか、アップルのような爽やかな酸味やほんのりと赤ワインのような印象も口の中に残ります。様々なフレーバーを感じとれる、複雑なコーヒー。ジューシーで滑らかな舌触りも特徴的。",
-      };
-      list.push(<ListItem key={i} coffee={coffee} />);
+    for (let i = 0; i < coffees.length; i++) {
+      list.push(<ListItem key={i} coffee={coffees[i]} />);
 
       if (i === 5) {
         list.push(
-          <div className="section-arrival" key={11} >
+          <div className="section-arrival" key={coffees.length + 1} >
             <span className="section-arrival-title">
               6月入荷のコーヒー
             </span>
