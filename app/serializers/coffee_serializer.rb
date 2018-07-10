@@ -13,7 +13,7 @@ class CoffeeSerializer < ActiveModel::Serializer
   end
 
   def new_arrival
-    object.created_at >= Time.current.beginning_of_day  - 13.days
+    object.created_at >= Time.current.beginning_of_day - 13.days
   end
 
   def arrival_date
