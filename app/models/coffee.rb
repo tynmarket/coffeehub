@@ -7,5 +7,9 @@ class Coffee < ApplicationRecord
   }
   enum_text :roast
 
-  scope :for_api, -> { eager_load(:site).order(created_at: :desc, id: :desc) }
+  class << self
+    def for_api(page)
+      eager_load(:site).order(created_at: :desc, id: :desc).page(page)
+    end
+  end
 end
