@@ -26,7 +26,7 @@ export class CoffeeList extends React.Component<any, State> {
   public componentWillReceiveProps(nextProps) {
     const roast = nextProps.match.params.roast;
     this.fetchCoffees(roast);
-    this.setState({openRoastList: false});
+    this.setState({openRoastList: false, coffees: []});
   }
 
   public componentDidMount() {
@@ -67,7 +67,9 @@ export class CoffeeList extends React.Component<any, State> {
             onClick={this.closeRoastList}
           />
         </div>
-        {list}
+        <div className={`coffee-list ${list.length > 0 ? "show" : null}`}>
+          {list}
+        </div>
         <Pagination prev={null} next={2} />
       </section>
     );
