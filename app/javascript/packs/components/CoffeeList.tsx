@@ -10,6 +10,7 @@ const PER_PAGE = 10;
 interface State {
   coffees: Coffee[];
   openRoastList: boolean;
+  showSpinner: boolean;
 }
 
 export class CoffeeList extends React.Component<any, State> {
@@ -18,6 +19,7 @@ export class CoffeeList extends React.Component<any, State> {
     this.state = {
       coffees: [],
       openRoastList: false,
+      showSpinner: true,
     };
 
     this.fetchCoffees = this.fetchCoffees.bind(this);
@@ -30,7 +32,7 @@ export class CoffeeList extends React.Component<any, State> {
     const roast = nextProps.match.params.roast;
     const query = location.search;
     this.fetchCoffees(roast, query);
-    this.setState({openRoastList: false, coffees: []});
+    this.setState({coffees: [], openRoastList: false, showSpinner: true});
   }
 
   public componentDidMount() {
@@ -74,6 +76,7 @@ export class CoffeeList extends React.Component<any, State> {
             onClick={this.closeRoastList}
           />
         </div>
+        <div className={this.state.showSpinner ? "spinner show" : ""} />
         <div className={`coffee-list ${list.length > 0 ? "show" : ""}`}>
           {list}
         </div>
@@ -84,7 +87,7 @@ export class CoffeeList extends React.Component<any, State> {
 
   private fetchCoffees(roast: string, query: string) {
     getCoffees(roast, query).then((coffees) => {
-      this.setState({coffees});
+      this.setState({coffees, showSpinner: false});
     });
   }
 
