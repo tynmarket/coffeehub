@@ -29,6 +29,7 @@ export class CoffeeList extends React.Component<any, State> {
   }
 
   public componentWillReceiveProps(nextProps) {
+    window.scrollTo(0, 0);
     const roast = nextProps.match.params.roast;
     const query = location.search;
     this.fetchCoffees(roast, query);
