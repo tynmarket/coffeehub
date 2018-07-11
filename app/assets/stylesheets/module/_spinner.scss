@@ -1,0 +1,22 @@
+.spinner.show {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin: 4rem auto;
+  border-top: 0.5rem solid $color-accent-transparent;
+  border-right: 0.5rem solid $color-accent-transparent;
+  border-bottom: 0.5rem solid $color-accent-transparent;
+  border-left: 0.5rem solid $color-accent;
+  transform: translateZ(0);
+  animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
