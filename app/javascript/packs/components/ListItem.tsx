@@ -15,11 +15,11 @@ interface Props {
   coffee: Coffee;
 }
 
-export const ListItem: React.StatelessComponent<Props> = (props) => {
+export const ListItem: React.StatelessComponent<Props> = ({coffee}) => {
   /* tslint:disable:max-line-length */
   return (
     <article>
-      <a className="card-item" href="/">
+      <a className="card-item" href={coffee.url} target="_blank">
         <div className="card-item-left">
           <div className="card-item-cup-and-shop">
             <span className="card-item-cup-wrapper">
@@ -28,7 +28,7 @@ export const ListItem: React.StatelessComponent<Props> = (props) => {
               </svg>
             </span>
             <span className="card-item-shop">
-              {props.coffee.shop}
+              {coffee.shop}
             </span>
           </div>
           <div className="card-item-coffee-bean-and-roast">
@@ -38,30 +38,30 @@ export const ListItem: React.StatelessComponent<Props> = (props) => {
               </svg>
             </span>
             <span className="card-item-roast">
-              {props.coffee.roast}
+              {coffee.roast}
             </span>
             <span className="card-item-roast-sufix hide-for-mobile">
               ロースト
             </span>
           </div>
           <div className="card-item-arrival-date hide-for-mobile">
-            {props.coffee.arrival_date}
+            {coffee.arrival_date}
           </div>
         </div>
         <div className="card-item-right">
           <h2 className="card-item-title">
             <span className="card-item-country">
-              {props.coffee.country}
+              {coffee.country}
             </span>
             <span className="card-item-area">
-            {props.coffee.area}
+            {coffee.area}
             </span>
           </h2>
           <div className="card-item-taste">
-          {props.coffee.taste}
+          {coffee.taste}
           </div>
         </div>
-        {props.coffee.new ? ribbon() : null}
+        {coffee.new ? ribbon() : null}
       </a>
     </article>
   );
