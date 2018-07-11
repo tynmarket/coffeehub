@@ -47,7 +47,8 @@ export class CoffeeList extends React.Component<any, State> {
     const coffees = this.state.coffees;
     const [prev, next] = this.paginationParams(coffees.length);
     const length = coffees.length > PER_PAGE ? PER_PAGE : coffees.length;
-    let month, monthPrev;
+    let month;
+    let monthPrev;
 
     for (let i = 0; i < length; i++) {
       const coffee = coffees[i];
