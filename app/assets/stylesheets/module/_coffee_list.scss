@@ -1,6 +1,6 @@
 .coffee-list {
   opacity: 0;
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in;
 
   &.show {
     opacity: 1;
