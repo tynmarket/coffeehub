@@ -70,11 +70,11 @@ export class CoffeeList extends React.Component<any, State> {
           </span>
           <RoastList open={this.state.openRoastList} />
           <div
-            className={`roast-select-overlay ${this.state.openRoastList ? "show" : null}`}
+            className={`roast-select-overlay ${this.state.openRoastList ? "show" : ""}`}
             onClick={this.closeRoastList}
           />
         </div>
-        <div className={`coffee-list ${list.length > 0 ? "show" : null}`}>
+        <div className={`coffee-list ${list.length > 0 ? "show" : ""}`}>
           {list}
         </div>
         <Pagination prev={prev} next={next} />
