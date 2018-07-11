@@ -47,6 +47,7 @@ export class CoffeeList extends React.Component<any, State> {
     const coffees = this.state.coffees;
     const [prev, next] = this.paginationParams(coffees.length);
     const length = coffees.length > PER_PAGE ? PER_PAGE : coffees.length;
+    const roast = this.props.match.params.roast;
     let month;
     let monthPrev;
 
@@ -57,7 +58,7 @@ export class CoffeeList extends React.Component<any, State> {
       if (i !== 0 && month !== monthPrev) {
         list.push(
           <div className="section-arrival" key={length + 1} >
-            <span className="section-arrival-title">
+            <span className={`section-arrival-title coffee-color-${roast || "high"}`}>
               {`${month}月入荷のコーヒー`}
             </span>
           </div>,
@@ -71,7 +72,7 @@ export class CoffeeList extends React.Component<any, State> {
     return (
       <section className="main-content">
         <div className="section-title-and-roast-select">
-          <h1 className="section-title">
+          <h1 className={`section-title coffee-color-${roast || "high"}`}>
             新着コーヒー豆一覧
           </h1>
           <span className="roast-select-button" onClick={this.openRoastList}>
