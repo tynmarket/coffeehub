@@ -1,5 +1,5 @@
 class CoffeeSerializer < ActiveModel::Serializer
-  attributes :shop, :country, :taste, :arrival_date, :url
+  attributes :shop, :country, :taste, :arrival_date, :arrival_month, :url
   attribute :roast_text, key: :roast
   attribute :area_or_factory, key: :area
   attribute :new_arrival, key: :new
@@ -18,6 +18,10 @@ class CoffeeSerializer < ActiveModel::Serializer
 
   def arrival_date
     I18n.l(object.created_at, format: :ms_ds_ja)
+  end
+
+  def arrival_month
+    object.created_at.month
   end
 
   def url

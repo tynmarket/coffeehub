@@ -47,19 +47,24 @@ export class CoffeeList extends React.Component<any, State> {
     const coffees = this.state.coffees;
     const [prev, next] = this.paginationParams(coffees.length);
     const length = coffees.length > PER_PAGE ? PER_PAGE : coffees.length;
+    let month, monthPrev;
 
     for (let i = 0; i < length; i++) {
-      list.push(<ListItem key={i} coffee={coffees[i]} />);
+      const coffee = coffees[i];
+      month = coffee.arrival_month;
 
-      if (i === 5) {
+      if (i !== 0 && month !== monthPrev) {
         list.push(
           <div className="section-arrival" key={length + 1} >
             <span className="section-arrival-title">
-              6月入荷のコーヒー
+              {`${month}月入荷のコーヒー`}
             </span>
           </div>,
         );
       }
+
+      list.push(<ListItem key={i} coffee={coffee} />);
+      monthPrev = month;
     }
 
     return (

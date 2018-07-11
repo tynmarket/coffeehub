@@ -6,5 +6,6 @@ export interface Coffee {
   taste: string;
   new: boolean;
   arrival_date: string;
+  arrival_month: number;
   url: string;
 }
