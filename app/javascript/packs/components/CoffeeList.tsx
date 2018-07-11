@@ -5,6 +5,8 @@ import { ListItem } from "./ListItem";
 import { Pagination } from "./Pagination";
 import { RoastList } from "./RoastList";
 
+const PER_PAGE = 10;
+
 interface State {
   coffees: Coffee[];
   openRoastList: boolean;
@@ -21,23 +23,27 @@ export class CoffeeList extends React.Component<any, State> {
     this.fetchCoffees = this.fetchCoffees.bind(this);
     this.openRoastList = this.openRoastList.bind(this);
     this.closeRoastList = this.closeRoastList.bind(this);
+    this.paginationParams = this.paginationParams.bind(this);
   }
 
   public componentWillReceiveProps(nextProps) {
     const roast = nextProps.match.params.roast;
-    this.fetchCoffees(roast);
+    const query = location.search;
+    this.fetchCoffees(roast, query);
     this.setState({openRoastList: false, coffees: []});
   }
 
   public componentDidMount() {
     const roast = this.props.match.params.roast;
-    this.fetchCoffees(roast);
+    const query = location.search;
+    this.fetchCoffees(roast, query);
   }
 
   public render() {
     const list = [];
     const coffees = this.state.coffees;
-    const length = coffees.length > 10 ? 10 : coffees.length;
+    const [prev, next] = this.paginationParams(coffees.length);
+    const length = coffees.length > PER_PAGE ? PER_PAGE : coffees.length;
 
     for (let i = 0; i < length; i++) {
       list.push(<ListItem key={i} coffee={coffees[i]} />);
@@ -71,13 +77,13 @@ export class CoffeeList extends React.Component<any, State> {
         <div className={`coffee-list ${list.length > 0 ? "show" : null}`}>
           {list}
         </div>
-        <Pagination prev={null} next={2} />
+        <Pagination prev={prev} next={next} />
       </section>
     );
   }
 
-  private fetchCoffees(roast: string) {
-    getCoffees(roast).then((coffees) => {
+  private fetchCoffees(roast: string, query: string) {
+    getCoffees(roast, query).then((coffees) => {
       this.setState({coffees});
     });
   }
@@ -88,5 +94,18 @@ export class CoffeeList extends React.Component<any, State> {
 
   private closeRoastList() {
     this.setState({openRoastList: false});
+  }
+
+  private paginationParams(length: number): number[] {
+    const params = new URLSearchParams(location.search);
+    const pageStr = params.get("page");
+    const next = length > PER_PAGE;
+
+    if (pageStr != null && pageStr != "1") {
+      const page = parseInt(pageStr);
+      return [page - 1, (next ? page + 1 : null)];
+    } else {
+      return [null, (next ? 2 : null)];
+    }
   }
 }
