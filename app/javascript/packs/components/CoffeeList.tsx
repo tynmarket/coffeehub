@@ -37,13 +37,14 @@ export class CoffeeList extends React.Component<any, State> {
   public render() {
     const list = [];
     const coffees = this.state.coffees;
+    const length = coffees.length > 10 ? 10 : coffees.length;
 
-    for (let i = 0; i < coffees.length; i++) {
+    for (let i = 0; i < length; i++) {
       list.push(<ListItem key={i} coffee={coffees[i]} />);
 
       if (i === 5) {
         list.push(
-          <div className="section-arrival" key={coffees.length + 1} >
+          <div className="section-arrival" key={length + 1} >
             <span className="section-arrival-title">
               6月入荷のコーヒー
             </span>
