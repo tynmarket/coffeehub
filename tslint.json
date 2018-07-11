@@ -1,6 +1,7 @@
 {
   "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
-    "interface-name": null
+    "interface-name": null,
+    "radix": null
   }
 }

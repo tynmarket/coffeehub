@@ -9,7 +9,7 @@ function link(page: number, text: string) {
         {text}
       </a>
     );
-  } else if (page == 1) {
+  } else if (page === 1) {
     return (
       <Link to="/" className="pagination-item active">
         {text}

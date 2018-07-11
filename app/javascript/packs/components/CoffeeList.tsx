@@ -101,7 +101,7 @@ export class CoffeeList extends React.Component<any, State> {
     const pageStr = params.get("page");
     const next = length > PER_PAGE;
 
-    if (pageStr != null && pageStr != "1") {
+    if (pageStr !== null && pageStr !== "1") {
       const page = parseInt(pageStr);
       return [page - 1, (next ? page + 1 : null)];
     } else {
