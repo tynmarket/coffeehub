@@ -1,6 +1,5 @@
 class CoffeeSerializer < ActiveModel::Serializer
-  attributes :shop, :country, :taste, :arrival_date, :arrival_month, :url
-  attribute :roast_text, key: :roast
+  attributes :shop, :country, :taste, :roast_text, :roast, :arrival_date, :arrival_month, :url
   attribute :area_or_factory, key: :area
   attribute :new_arrival, key: :new
 
