@@ -91,7 +91,7 @@ export class CoffeeList extends React.Component<any, State> {
         <div className={`coffee-list ${list.length > 0 ? "show" : ""}`}>
           {list}
         </div>
-        <Pagination prev={prev} next={next} />
+        <Pagination prev={prev} next={next} roast={roast} />
       </section>
     );
   }
