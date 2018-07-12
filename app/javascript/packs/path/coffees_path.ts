@@ -4,7 +4,7 @@ function coffees(roast: string): string {
   if (roast != null) {
     return `${PATH_COFEES}/roast/${roast}`;
   } else {
-    return "/"
+    return "/";
   }
 }
 
