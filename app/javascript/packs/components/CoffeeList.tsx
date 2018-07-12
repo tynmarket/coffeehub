@@ -1,5 +1,6 @@
 import * as React from "react";
 import { getCoffees } from "../api/cofee_api";
+import { roastToText } from "../model/coffee";
 import { Coffee } from "../model/coffee";
 import { ListItem } from "./ListItem";
 import { Pagination } from "./Pagination";
@@ -48,6 +49,7 @@ export class CoffeeList extends React.Component<any, State> {
     const [prev, next] = this.paginationParams(coffees.length);
     const length = coffees.length > PER_PAGE ? PER_PAGE : coffees.length;
     const roast = this.props.match.params.roast;
+    const roastText = roastToText(roast);
     let month;
     let monthPrev;
 
@@ -74,6 +76,7 @@ export class CoffeeList extends React.Component<any, State> {
         <div className="section-title-and-roast-select">
           <h1 className={`section-title coffee-color-${roast || "high"}`}>
             新着コーヒー豆一覧
+            {roastText != null ? <span className="hide-for-mobile">（{roastText}ロースト）</span> : null}
           </h1>
           <span className="roast-select-button" onClick={this.openRoastList}>
             絞り込み
