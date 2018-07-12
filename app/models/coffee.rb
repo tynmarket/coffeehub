@@ -1,4 +1,6 @@
 class Coffee < ApplicationRecord
+  PER_PAGE = 10
+
   belongs_to :site
 
   enum roast: {
@@ -10,6 +12,16 @@ class Coffee < ApplicationRecord
   class << self
     def for_api(page)
       eager_load(:site).order(created_at: :desc, id: :desc).page(page)
+    end
+
+    def page(page)
+      page = page.to_i
+
+      if page >= 2
+        limit(PER_PAGE + 1).offset(PER_PAGE * (page - 1))
+      else
+        limit(PER_PAGE + 1)
+      end
     end
   end
 end
