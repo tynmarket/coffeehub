@@ -10,6 +10,6 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_eip" "ip" {
+resource "aws_eip" "web" {
   instance = "${aws_instance.web.id}"
 }
