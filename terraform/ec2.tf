@@ -1,14 +1,15 @@
-resource "aws_instance" "example" {
-  ami           = "ami-e99f4896"
+resource "aws_instance" "web" {
+  ami = "ami-e99f4896"
   instance_type = "t2.micro"
   key_name = "awskey"
-  subnet_id = "subnet-0c0c1d45"
-  vpc_security_group_ids = ["sg-f4525d8c"]
+  subnet_id = "${aws_subnet.web.id}"
+  vpc_security_group_ids = ["${aws_security_group.web.id}"]
+
   tags {
-      Name = "tf-test"
+    Name = "tf-test"
   }
 }
 
 resource "aws_eip" "ip" {
-  instance = "${aws_instance.example.id}"
+  instance = "${aws_instance.web.id}"
 }
