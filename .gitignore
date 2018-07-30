@@ -29,3 +29,8 @@ yarn-debug.log*
 .yarn-integrity
 
 .DS_Store
+
+.terraform
+*.tfstate
+*.tfstate.backup
+secrets.tf
