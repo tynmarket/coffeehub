@@ -15,3 +15,13 @@ resource "aws_subnet" "db" {
     Name = "tf-test-db"
   }
 }
+
+resource "aws_subnet" "db_sub" {
+  vpc_id = "${aws_vpc.main.id}"
+  cidr_block = "10.1.3.0/24"
+  availability_zone = "ap-northeast-1d"
+
+  tags {
+    Name = "tf-test-db-sub"
+  }
+}
