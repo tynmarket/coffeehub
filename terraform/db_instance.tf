@@ -8,7 +8,8 @@ resource "aws_db_instance" "db" {
   name                 = "coffeehub"
   username             = "${var.username}"
   password             = "${var.password}"
-  parameter_group_name = "default.mysql5.7"
+  parameter_group_name = "${aws_db_parameter_group.db.name}"
+  apply_immediately = true
   auto_minor_version_upgrade = false
   copy_tags_to_snapshot = true
   skip_final_snapshot = true
