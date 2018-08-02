@@ -34,3 +34,4 @@ yarn-debug.log*
 *.tfstate
 *.tfstate.backup
 secrets.tf
+elb.tf
