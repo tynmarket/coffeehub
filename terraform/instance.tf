@@ -10,6 +10,6 @@ resource "aws_instance" "web" {
   }
 }
 
-output "aws_instance.web.address" {
-    value = "${aws_instance.web.address}"
+output "aws_instance.web.public_ip" {
+    value = "${aws_instance.web.public_ip}"
 }
