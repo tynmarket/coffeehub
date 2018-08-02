@@ -17,3 +17,7 @@ resource "aws_db_instance" "db" {
   vpc_security_group_ids = ["${aws_security_group.db.id}"]
   db_subnet_group_name   = "${aws_db_subnet_group.db.id}"
 }
+
+output "aws_db_instance.db.address" {
+    value = "${aws_db_instance.db.address}"
+}

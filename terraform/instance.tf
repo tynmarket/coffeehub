@@ -9,3 +9,7 @@ resource "aws_instance" "web" {
     Name = "tf-test"
   }
 }
+
+output "aws_instance.web.address" {
+    value = "${aws_instance.web.address}"
+}
