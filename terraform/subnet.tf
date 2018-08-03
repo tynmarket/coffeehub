@@ -7,6 +7,15 @@ resource "aws_subnet" "web" {
   }
 }
 
+resource "aws_subnet" "web_sub" {
+  vpc_id = "${aws_vpc.main.id}"
+  cidr_block = "10.1.5.0/24"
+
+  tags {
+    Name = "tf-test-web-sub"
+  }
+}
+
 resource "aws_subnet" "db" {
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "10.1.2.0/24"

@@ -1,5 +1,10 @@
-resource "aws_route_table_association" "main" {
+resource "aws_route_table_association" "web" {
   subnet_id      = "${aws_subnet.web.id}"
+  route_table_id = "${aws_route_table.main.id}"
+}
+
+resource "aws_route_table_association" "web_sub" {
+  subnet_id      = "${aws_subnet.web_sub.id}"
   route_table_id = "${aws_route_table.main.id}"
 }
 
