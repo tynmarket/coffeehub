@@ -1,4 +1,4 @@
-FROM tynmarket-195002/coffeehub-base
+FROM tynmarket/coffeehub-base
 
 RUN mkdir -p /app/tmp/cache \
       && mkdir -p /app/tmp/pids \
