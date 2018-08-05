@@ -28,6 +28,7 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY Gemfile Gemfile.lock /app/
+COPY Gemfile Gemfile.lock package.json yarn.lock /app/
 
 RUN bundle install --jobs=4
+RUN yarn install --production
