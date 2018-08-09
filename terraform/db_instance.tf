@@ -6,8 +6,8 @@ resource "aws_db_instance" "db" {
   engine_version       = "5.7"
   instance_class       = "db.t2.micro"
   name                 = "coffeehub"
-  username             = "${var.username}"
-  password             = "${var.password}"
+  username             = "${var.db_username}"
+  password             = "${var.db_password}"
   parameter_group_name = "${aws_db_parameter_group.db.name}"
   apply_immediately = true
   auto_minor_version_upgrade = false

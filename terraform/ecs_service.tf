@@ -17,7 +17,7 @@ resource "aws_ecs_service" "app" {
     container_port   = 80
   }
 
-  lifecycle {
-    ignore_changes = ["desired_count", "task_definition"]
-  }
+  # lifecycle {
+  #   ignore_changes = ["desired_count", "task_definition"]
+  # }
 }
