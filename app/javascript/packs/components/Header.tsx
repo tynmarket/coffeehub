@@ -6,7 +6,7 @@ export const Header: React.StatelessComponent<{}> = () => {
       <a className="header-logo" href="/">
         <img src="/icon.svg" />
         <span className="header-title">
-          COFEE HUB
+          COFFEE HUB
         </span>
       </a>
     </header>
