@@ -4,7 +4,7 @@ export const Header: React.StatelessComponent<{}> = () => {
   return (
     <header className="header">
       <a className="header-logo" href="/">
-        <img src="/icon.svg" />
+        <img src="/images/icon.svg" />
         <span className="header-title">
           COFFEE HUB
         </span>

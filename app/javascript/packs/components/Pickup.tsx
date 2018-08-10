@@ -4,7 +4,7 @@ export const Pickup: React.StatelessComponent<{}> = () => {
   return (
     <section className="pickup">
       <a href="http://www.mui-motosumi.co.jp" target="_blank">
-        <img className="pickup-image" src="/mui.png" />
+        <img className="pickup-image" src="/images/mui.png" />
         <span className="pickup-note">
           ピックアップ
         </span>
