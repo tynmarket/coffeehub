@@ -1,8 +1,8 @@
-import * as React from "react";
+import "babel-polyfill";
 import * as ReactDOM from "react-dom";
 import "../styles/application";
-import "babel-polyfill";
 import { App } from "./components/App";
+import * as React from "react";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
