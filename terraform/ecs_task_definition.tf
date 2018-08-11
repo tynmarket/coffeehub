@@ -1,7 +1,7 @@
 resource "aws_ecs_task_definition" "app" {
   family                = "nginx"
-  cpu = 1024
-  memory = 500
+  cpu = 512
+  memory = 450
   #container_definitions = "${file("container-definitions.json")}"
   container_definitions = <<EOF
 [
