@@ -1,23 +1,27 @@
 .footer {
-  //border-top: 1px solid #f9e5d7;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: #e6e6e6;
 
   .copyright {
-    padding-top: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
 
     .twitter-name {
       margin-left: 0.2rem;
 
       &:hover {
-        color: $color-high-roast;
+        color: $color-black-dark;
       }
     }
   }
 
+  .github {
+    width: 24px;
+    margin: 0 auto 2rem auto;
+  }
+
   .copyright-flaticon {
-    margin-top: 3rem;
-    padding-bottom: 3rem;
     text-align: center;
     font-size: $font-size-s;
   }

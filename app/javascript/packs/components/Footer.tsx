@@ -9,6 +9,11 @@ export const Footer: React.StatelessComponent<{}> = () => {
           tynmarket
         </a>
       </p>
+      <div className="github">
+        <a href="https://github.com/tynmarket/coffeehub" target="_blank">
+          <img src="/images/github.svg" />
+         </a>
+      </div>
       <div className="copyright-flaticon">
         Icons made by
         <a href="http://www.freepik.com" title="Freepik" target="_blank">
