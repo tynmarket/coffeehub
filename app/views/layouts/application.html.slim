@@ -9,7 +9,8 @@ html
     = favicon_link_tag "favicon.png"
     = favicon_link_tag "apple-touch-icon-180.png", rel: "apple-touch-icon", sizes: "180x180"
     = stylesheet_pack_tag 'application', media: 'all'
-    javascript:
+    /javascript:
+      For Fetch as Google
       window.onerror = function(msg, url, line, col, error) {
         var div = document.createElement('div');
         div.textContent = msg;
@@ -25,40 +26,3 @@ html
       gtag('config', 'UA-123740079-1');
   body
     #app
-    /.container
-      aside.sidebar
-        section.sidebar-content
-          h3.section-roast-title
-            | ロースト度合いから選ぶ
-          ul
-            li.sidebar-item
-              a.roast-cinnamon href="/"
-                | シナモンロースト
-            li.sidebar-item
-              a.roast-medium href="/"
-                | ミディアムロースト
-            li.sidebar-item
-              a.roast-high href="/"
-                | ハイロースト
-            li.sidebar-item
-              a.roast-city href="/"
-                | シティロースト
-            li.sidebar-item
-              a.roast-fullcity href="/"
-                | フルシティロースト
-            li.sidebar-item
-              a.roast-french href="/"
-                | フレンチロースト
-      main.content
-        section.pickup
-          a href="http://www.mui-motosumi.co.jp" target="_blank"
-            img.pickup-image src="mui.jpg"
-            span.pickup-note
-              | ピックアップ
-            .pickup-area
-              h1.pickup-shop
-                | Mui
-              p.pickup-text
-                | 最高品質のコーヒー豆と確かな焙煎の技術。元住吉の実店舗では美味しいケーキも。
-        section.main-content
-          = yield
