@@ -1,4 +1,5 @@
 # タスクが動いてないインスタンスをスケールインさせる必要がある
+# https://christina04.hatenablog.com/entry/2017/10/19/190000
 
 # resource "aws_autoscaling_schedule" "app_scale_out" {
 #   scheduled_action_name  = "app-scale-out"
