@@ -38,8 +38,19 @@ resource "aws_ecs_task_definition" "app" {
       {
         "name": "MACKEREL_API_KEY",
         "value": "${var.mackerel_api_key}"
+      },
+      {
+        "name": "RAILS_LOG_TO_STDOUT",
+        "value": "1"
       }
-    ]
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${aws_cloudwatch_log_group.coffeehub.name}",
+        "awslogs-region": "${var.region}"
+      }
+    }
   }
 ]
   EOF
