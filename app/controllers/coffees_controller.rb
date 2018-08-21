@@ -3,5 +3,6 @@ class CoffeesController < ApplicationController
   end
 
   def roast
+    @roast = params[:roast]
   end
 end
