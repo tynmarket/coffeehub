@@ -7,6 +7,13 @@ module EnumText
           scope: [:activerecord, :enum, self.class.model_name.singular.to_sym, attribute.to_sym]
         )
       end
+
+      define_singleton_method "#{attribute}_text" do |roast|
+        I18n.t(
+          roast,
+          scope: [:activerecord, :enum, model_name.singular.to_sym, attribute.to_sym]
+        )
+      end
     end
   end
 end
