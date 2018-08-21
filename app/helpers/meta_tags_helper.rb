@@ -18,7 +18,7 @@ module MetaTagsHelper
   def page_coffee_text
     case controller_name
     when "coffees"
-      Coffee.roast_text(@roast)
+      "#{Coffee.roast_text(@roast)}ロースト"
     else
       "シングルオリジン"
     end
