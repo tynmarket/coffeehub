@@ -34,3 +34,5 @@ Style/StringLiterals:
 Metrics/LineLength:
   Max: 100
 
+Metrics/MethodLength:
+  Max: 50
