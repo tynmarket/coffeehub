@@ -1,0 +1,41 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS default.rails_logs (
+  `method` string,
+  `path` string,
+  `format` string,
+  `controller` string,
+  `action` string,
+  `status` int,
+  `duration` float,
+  `view` float,
+  `db` float,
+  `params` map<string,string>,
+  `time` string
+)
+
+CREATE EXTERNAL TABLE IF NOT EXISTS default.rails_logs (
+  `method` string
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
+WITH SERDEPROPERTIES (
+ 'serialization.format' = '1',
+ 'input.regex' = '.*\\{\\"method\\":\\"(.+?)\\".*'
+)
+LOCATION 's3://coffeehub/logs/2018-05-20/092a9497-3a3c-4afd-8d4c-53d7b194b029/53f8c8363cce6e8eb9c63ccac15e031d9f6f517145bb3abe43f52d21aa9c433b/';
+
+
+CREATE EXTERNAL TABLE IF NOT EXISTS default.rails_logs (
+  `method` string
+)
+PARTITIONED BY (dt string)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
+WITH SERDEPROPERTIES (
+ 'serialization.format' = '1',
+ 'input.regex' = '.*\\{\\"method\\":\\"(.+?)\\".*'
+)
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.SymlinkTextInputFormat'
+OUTPUTFORMAT  'org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat'
+LOCATION 's3://coffeehub/';
+
+MSCK REPAIR TABLE rails_logs;
+
+SELECT * FROM "default"."rails_logs" where dt = '2018-05-20';
