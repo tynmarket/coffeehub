@@ -39,3 +39,26 @@ resource "aws_iam_role_policy" "ecs_service" {
 }
 EOF
 }
+
+resource "aws_iam_role_policy" "export_cloudwatch_logs" {
+  name = "export-cloudwatch-logs"
+  role = "${aws_iam_role.export_cloudwatch_logs.id}"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateExportTask",
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    }
+  ]
+}
+EOF
+}
