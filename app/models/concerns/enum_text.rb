@@ -8,9 +8,9 @@ module EnumText
         )
       end
 
-      define_singleton_method "#{attribute}_text" do |roast|
+      define_singleton_method "#{attribute}_text" do |key|
         I18n.t(
-          roast,
+          key,
           scope: [:activerecord, :enum, model_name.singular.to_sym, attribute.to_sym]
         )
       end
