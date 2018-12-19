@@ -35,3 +35,4 @@ yarn-debug.log*
 *.tfstate.backup
 secrets.tf
 elb.tf
+app/assets/images/mui.jpg
