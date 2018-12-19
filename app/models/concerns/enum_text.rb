@@ -14,6 +14,10 @@ module EnumText
           scope: [:activerecord, :enum, model_name.singular.to_sym, attribute.to_sym]
         )
       end
+
+      define_singleton_method "#{attribute}_options" do
+        send(attribute.to_s.pluralize).map { |k, v| [send("#{attribute}_text", k), v] }
+      end
     end
   end
 end
