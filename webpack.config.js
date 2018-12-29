@@ -129,7 +129,7 @@ module.exports = {
                 { name: '[path][name]-[hash].[ext]', context: 'app/javascript' } } ] },
         { test: /\.(css)$/i,
           use:
-           [ '/Users/takehiko/git/spider2/coffeehub/node_modules/mini-css-extract-plugin/dist/loader.js',
+           [ MiniCssExtractPlugin.loader,
              { loader: 'css-loader',
                options:
                 { sourceMap: true,
@@ -144,7 +144,7 @@ module.exports = {
           exclude: /\.module\.[a-z]+$/ },
         { test: /\.(scss|sass)$/i,
           use:
-           [ '/Users/takehiko/git/spider2/coffeehub/node_modules/mini-css-extract-plugin/dist/loader.js',
+           [ MiniCssExtractPlugin.loader,
              { loader: 'css-loader',
                options:
                 { sourceMap: true,
@@ -160,7 +160,7 @@ module.exports = {
           exclude: /\.module\.[a-z]+$/ },
         { test: /\.(css)$/i,
           use:
-           [ '/Users/takehiko/git/spider2/coffeehub/node_modules/mini-css-extract-plugin/dist/loader.js',
+           [ MiniCssExtractPlugin.loader,
              { loader: 'css-loader',
                options:
                 { sourceMap: true,
@@ -175,7 +175,7 @@ module.exports = {
           include: /\.module\.[a-z]+$/ },
         { test: /\.(scss|sass)$/i,
           use:
-           [ '/Users/takehiko/git/spider2/coffeehub/node_modules/mini-css-extract-plugin/dist/loader.js',
+           [ MiniCssExtractPlugin.loader,
              { loader: 'css-loader',
                options:
                 { sourceMap: true,
