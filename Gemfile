@@ -13,7 +13,6 @@ gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'rack-proxy'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -21,6 +20,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rack-proxy'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'seed-fu'
