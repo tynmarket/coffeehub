@@ -1,4 +1,4 @@
-// node_modules/.bin/webpack --mode=production
+// node_modules/.bin/webpack-dev-server  -d --config webpack.config.development.js
 
 const glob = require("glob");
 const path = require( 'path' );
@@ -7,7 +7,6 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackAssetsManifest = require('webpack-assets-manifest')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
@@ -38,17 +37,31 @@ module.exports = {
     modules:
       [ path.join(__dirname, 'app/javascript'),
         'node_modules' ],},
-
-  bail: true,
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        parallel: true,
-        cache: true,
-        sourceMap: true,
-      })
-    ]
-  },
+  cache: true,
+  devtool: 'cheap-module-source-map',
+  devServer:
+   { clientLogLevel: 'none',
+     compress: true,
+     quiet: false,
+     disableHostCheck: true,
+     host: 'localhost',
+     port: 3035,
+     https: false,
+     hot: false,
+     contentBase: path.join(__dirname, 'public/packs'),
+     inline: true,
+     useLocalIp: false,
+     public: 'localhost:3035',
+     publicPath: '/packs/',
+     historyApiFallback: { disableDotRule: true },
+     headers: { 'Access-Control-Allow-Origin': '*' },
+     overlay: true,
+     stats:
+      { entrypoints: false,
+        errorDetails: false,
+        modules: false,
+        moduleTrace: false },
+     watchOptions: { ignored: '/node_modules/' } },
   module:
    { strictExportPresence: true,
      rules:
@@ -89,7 +102,7 @@ module.exports = {
                 { babelrc: false,
                   presets: [ [ '@babel/preset-env', { modules: false } ] ],
                   cacheDirectory: 'tmp/cache/webpacker/babel-loader-node-modules',
-                  cacheCompression: true,
+                  cacheCompression: false,
                   compact: false,
                   sourceMaps: false } } ] },
         { test: /\.(js|jsx|mjs)?(\.erb)?$/,
@@ -98,8 +111,8 @@ module.exports = {
            [ { loader: 'babel-loader',
                options:
                 { cacheDirectory: 'tmp/cache/webpacker/babel-loader-node-modules',
-                  cacheCompression: true,
-                  compact: true } } ] } ] },
+                  cacheCompression: false,
+                  compact: false } } ] } ] },
   plugins:
     [ new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(process.env))),
       new CaseSensitivePathsPlugin(),
@@ -109,7 +122,6 @@ module.exports = {
       new WebpackAssetsManifest({
         writeToDisk: true,
         publicPath: true
-      }),
-      new OptimizeCSSAssetsPlugin() ],
+      }) ],
 
 };

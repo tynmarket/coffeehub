@@ -1,4 +1,4 @@
-// node_modules/.bin/webpack-dev-server  -d
+// node_modules/.bin/webpack --mode=production --config webpack.config.production.js
 
 const glob = require("glob");
 const path = require( 'path' );
@@ -7,6 +7,7 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackAssetsManifest = require('webpack-assets-manifest')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
@@ -37,31 +38,17 @@ module.exports = {
     modules:
       [ path.join(__dirname, 'app/javascript'),
         'node_modules' ],},
-  cache: true,
-  devtool: 'cheap-module-source-map',
-  devServer:
-   { clientLogLevel: 'none',
-     compress: true,
-     quiet: false,
-     disableHostCheck: true,
-     host: 'localhost',
-     port: 3035,
-     https: false,
-     hot: false,
-     contentBase: path.join(__dirname, 'public/packs'),
-     inline: true,
-     useLocalIp: false,
-     public: 'localhost:3035',
-     publicPath: '/packs/',
-     historyApiFallback: { disableDotRule: true },
-     headers: { 'Access-Control-Allow-Origin': '*' },
-     overlay: true,
-     stats:
-      { entrypoints: false,
-        errorDetails: false,
-        modules: false,
-        moduleTrace: false },
-     watchOptions: { ignored: '/node_modules/' } },
+
+  bail: true,
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        cache: true,
+        sourceMap: true,
+      })
+    ]
+  },
   module:
    { strictExportPresence: true,
      rules:
@@ -75,8 +62,7 @@ module.exports = {
                 { name: '[path][name]-[hash].[ext]', context: 'app/javascript' } } ] },
         { test: /\.(css)$/i,
           use:
-           [ { loader: 'style-loader',
-               options: { hmr: false, sourceMap: true } },
+           [ MiniCssExtractPlugin.loader,
              { loader: 'css-loader',
                options:
                 { sourceMap: true,
@@ -86,8 +72,7 @@ module.exports = {
           sideEffects: true },
         { test: /\.(scss|sass)$/i,
           use:
-           [ { loader: 'style-loader',
-               options: { hmr: false, sourceMap: true } },
+           [ MiniCssExtractPlugin.loader,
              { loader: 'css-loader',
                options:
                 { sourceMap: true,
@@ -104,7 +89,7 @@ module.exports = {
                 { babelrc: false,
                   presets: [ [ '@babel/preset-env', { modules: false } ] ],
                   cacheDirectory: 'tmp/cache/webpacker/babel-loader-node-modules',
-                  cacheCompression: false,
+                  cacheCompression: true,
                   compact: false,
                   sourceMaps: false } } ] },
         { test: /\.(js|jsx|mjs)?(\.erb)?$/,
@@ -113,14 +98,18 @@ module.exports = {
            [ { loader: 'babel-loader',
                options:
                 { cacheDirectory: 'tmp/cache/webpacker/babel-loader-node-modules',
-                  cacheCompression: false,
-                  compact: false } } ] } ] },
+                  cacheCompression: true,
+                  compact: true } } ] } ] },
   plugins:
     [ new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(process.env))),
       new CaseSensitivePathsPlugin(),
+      new MiniCssExtractPlugin({
+        filename: '[name]-[contenthash:8].css'
+      }),
       new WebpackAssetsManifest({
         writeToDisk: true,
         publicPath: true
-      }) ],
+      }),
+      new OptimizeCSSAssetsPlugin() ],
 
 };
