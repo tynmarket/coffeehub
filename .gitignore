@@ -36,3 +36,9 @@ yarn-debug.log*
 secrets.tf
 elb.tf
 app/assets/images/mui.jpg
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

@@ -53,3 +53,8 @@ jobs:
       - run:
           name: yarn stylelint
           command: yarn stylelint
+
+      # Build assets
+      - run:
+          name: yarn build
+          command: yarn build
