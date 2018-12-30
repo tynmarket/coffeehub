@@ -29,6 +29,8 @@
   },
   "scripts": {
     "tslint": "tslint --format stylish app/javascript/packs/**/*.ts{,x}",
-    "stylelint": "stylelint app/assets/stylesheets"
+    "stylelint": "stylelint app/assets/stylesheets",
+    "webpack-dev-server": "node_modules/.bin/webpack-dev-server -d --config webpack.config.development.js",
+    "build": "node_modules/.bin/webpack --mode=production --config webpack.config.production.js"
   }
 }
