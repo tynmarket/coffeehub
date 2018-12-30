@@ -16,13 +16,6 @@ module.exports = function(api) {
   }
 
   return {
-    env: {
-      test: {
-        plugins: [
-          "transform-es2015-modules-commonjs"
-        ]
-      }
-    },
     presets: [
       isTestEnv && [
         require('@babel/preset-env').default,
