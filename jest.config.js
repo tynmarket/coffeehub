@@ -5,6 +5,9 @@ module.exports = {
     '^.+\\.js$'  : '<rootDir>/node_modules/babel-jest',
     '.*\\.(ts)$' : '<rootDir>/node_modules/ts-jest'
   },
+  moduleDirectories: [
+    ...defaults.moduleDirectories, "app/javascript/packs"
+  ],
   moduleFileExtensions: [
     ...defaults.moduleFileExtensions, 'ts', 'tsx'
   ],

@@ -1,4 +1,4 @@
-import { getCoffees } from "../packs/api/cofee_api";
+import { getCoffees } from "api/cofee_api";
 
 test('adds 1 + 2 to equal 3', () => {
   expect(1 + 2).toBe(3);
