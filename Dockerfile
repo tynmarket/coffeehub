@@ -11,7 +11,7 @@ COPY docker/nginx /etc/logrotate.d
 
 ENV TZ Asia/Tokyo
 
-RUN bundle exec rails assets:precompile RAILS_ENV=production
+RUN yarn build
 
 EXPOSE 80
 
