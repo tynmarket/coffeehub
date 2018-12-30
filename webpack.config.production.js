@@ -1,4 +1,5 @@
-// node_modules/.bin/webpack --mode=production --config webpack.config.production.js
+// rm -rf public/packs && node_modules/.bin/webpack --mode=production --config webpack.config.production.js
+// RAILS_ENV=production RAILS_SERVE_STATIC_FILES=true bundle exec rails s
 
 const glob = require("glob");
 const path = require( 'path' );
