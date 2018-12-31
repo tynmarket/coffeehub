@@ -11,7 +11,7 @@ ARG rails_master_key
 ENV TZ Asia/Tokyo
 ENV RAILS_MASTER_KEY $rails_master_key
 
-RUN bundle exec rails assets:precompile && \
+RUN bundle exec rails assets:precompile RAILS_ENV=production && \
     yarn build && \
     rm -rf node_modules
 
