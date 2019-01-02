@@ -1,4 +1,5 @@
 import * as React from "react";
+import GitHub from "images/github.svg";
 
 export const Footer: React.StatelessComponent<{}> = () => {
   return (
@@ -11,7 +12,7 @@ export const Footer: React.StatelessComponent<{}> = () => {
       </p>
       <div className="github">
         <a href="https://github.com/tynmarket/coffeehub" target="_blank">
-          <img src="/images/github.svg" />
+          <img src={GitHub} />
          </a>
       </div>
       <div className="copyright-flaticon">

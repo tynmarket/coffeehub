@@ -1,10 +1,11 @@
 import * as React from "react";
+import Mui from "images/mui.png";
 
 export const Pickup: React.StatelessComponent<{}> = () => {
   return (
     <section className="pickup">
       <a href="http://www.mui-motosumi.co.jp" target="_blank">
-        <img className="pickup-image" src="/images/mui.png" />
+        <img className="pickup-image" src={Mui} />
         <span className="pickup-note">
           ピックアップ
         </span>
