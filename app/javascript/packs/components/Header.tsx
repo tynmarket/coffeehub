@@ -1,5 +1,5 @@
-import * as React from "react";
 import Icon from "images/icon.svg";
+import * as React from "react";
 
 export const Header: React.StatelessComponent<{}> = () => {
   return (

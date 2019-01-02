@@ -1,5 +1,5 @@
-import * as React from "react";
 import Mui from "images/mui.png";
+import * as React from "react";
 
 export const Pickup: React.StatelessComponent<{}> = () => {
   return (

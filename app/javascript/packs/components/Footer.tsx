@@ -1,5 +1,5 @@
-import * as React from "react";
 import GitHub from "images/github.svg";
+import * as React from "react";
 
 export const Footer: React.StatelessComponent<{}> = () => {
   return (
