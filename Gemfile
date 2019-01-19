@@ -5,6 +5,7 @@ ruby '2.5.3'
 
 gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'rack-cors', require: 'rack/cors'
 gem 'lograge'
 gem 'meta-tags'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
