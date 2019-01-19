@@ -5,11 +5,11 @@ ruby '2.5.3'
 
 gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'rack-cors', require: 'rack/cors'
 gem 'lograge'
 gem 'meta-tags'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'puma', '~> 3.11'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
