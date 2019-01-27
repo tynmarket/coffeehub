@@ -50,7 +50,7 @@
     "tslint": "tslint --fix --format stylish app/javascript/packs/**/*.ts{,x}",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "stylelint": "stylelint app/assets/stylesheets",
-    "webpack-dev-server": "node_modules/.bin/webpack-dev-server -d --config webpack.config.development.js",
+    "serve": "node_modules/.bin/webpack-dev-server -d --config webpack.config.development.js",
     "build": "rm -rf public/packs && node_modules/.bin/webpack --mode=production --config webpack.config.production.js",
     "test": "NODE_ENV=test jest"
   }
