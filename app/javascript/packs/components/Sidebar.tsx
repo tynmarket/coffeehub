@@ -6,9 +6,7 @@ export const Sidebar: React.StatelessComponent<{}> = () => {
   return (
     <aside className="sidebar">
       <section className="sidebar-content">
-        <h3 className="section-roast-title">
-          ロースト度合いから選ぶ
-        </h3>
+        <h3 className="section-roast-title">ロースト度合いから選ぶ</h3>
         <ul>
           <li className="sidebar-item">
             <Link to={path.cinnamonRoast} className="roast-cinnamon">

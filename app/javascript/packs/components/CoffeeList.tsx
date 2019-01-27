@@ -34,7 +34,7 @@ export class CoffeeList extends React.Component<any, State> {
     const roast = nextProps.match.params.roast;
     const query = location.search;
     this.fetchCoffees(roast, query);
-    this.setState({coffees: [], openRoastList: false, showSpinner: true});
+    this.setState({ coffees: [], openRoastList: false, showSpinner: true });
   }
 
   public componentDidMount() {
@@ -59,11 +59,11 @@ export class CoffeeList extends React.Component<any, State> {
 
       if (i !== 0 && month !== monthPrev) {
         list.push(
-          <div className="section-arrival" key={length + 1} >
+          <div className="section-arrival" key={length + 1}>
             <span className={`section-arrival-title coffee-color-${roast || "high"}`}>
               {`${month}月入荷のコーヒー`}
             </span>
-          </div>,
+          </div>
         );
       }
 
@@ -76,7 +76,9 @@ export class CoffeeList extends React.Component<any, State> {
         <div className="section-title-and-roast-select">
           <h1 className={`section-title coffee-color-${roast || "high"}`}>
             新着コーヒー豆一覧
-            {roastText != null ? <span className="hide-for-mobile">（{roastText}ロースト）</span> : null}
+            {roastText != null ? (
+              <span className="hide-for-mobile">（{roastText}ロースト）</span>
+            ) : null}
           </h1>
           <span className="roast-select-button" onClick={this.openRoastList}>
             絞り込み
@@ -88,26 +90,24 @@ export class CoffeeList extends React.Component<any, State> {
           />
         </div>
         <div className={this.state.showSpinner ? "spinner show" : ""} />
-        <div className={`coffee-list ${list.length > 0 ? "show" : ""}`}>
-          {list}
-        </div>
+        <div className={`coffee-list ${list.length > 0 ? "show" : ""}`}>{list}</div>
         <Pagination prev={prev} next={next} roast={roast} />
       </section>
     );
   }
 
   private fetchCoffees(roast: string, query: string) {
-    getCoffees(roast, query).then((coffees) => {
-      this.setState({coffees, showSpinner: false});
+    getCoffees(roast, query).then(coffees => {
+      this.setState({ coffees, showSpinner: false });
     });
   }
 
   private openRoastList() {
-    this.setState({openRoastList: true});
+    this.setState({ openRoastList: true });
   }
 
   private closeRoastList() {
-    this.setState({openRoastList: false});
+    this.setState({ openRoastList: false });
   }
 
   private paginationParams(length: number): number[] {
@@ -117,9 +117,9 @@ export class CoffeeList extends React.Component<any, State> {
 
     if (pageStr !== null && pageStr !== "1") {
       const page = parseInt(pageStr);
-      return [page - 1, (next ? page + 1 : null)];
+      return [page - 1, next ? page + 1 : null];
     } else {
-      return [null, (next ? 2 : null)];
+      return [null, next ? 2 : null];
     }
   }
 }

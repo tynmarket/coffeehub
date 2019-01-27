@@ -5,11 +5,7 @@ import { path } from "../path/coffees_path";
 
 function link(page: number, text: string, roast: string) {
   if (page == null) {
-    return (
-      <a className="pagination-item">
-        {text}
-      </a>
-    );
+    return <a className="pagination-item">{text}</a>;
   } else if (page === 1) {
     return (
       <Link to={path.roastCoffees(roast)} className="pagination-item active">
@@ -19,7 +15,7 @@ function link(page: number, text: string, roast: string) {
   } else {
     return (
       <Link
-        to={{pathname: path.roastCoffees(roast), search: `?page=${page}`}}
+        to={{ pathname: path.roastCoffees(roast), search: `?page=${page}` }}
         className="pagination-item active"
       >
         {text}
@@ -34,7 +30,7 @@ interface Props {
   roast: string;
 }
 
-export const Pagination: React.StatelessComponent<Props> = ({prev, next, roast}) => {
+export const Pagination: React.StatelessComponent<Props> = ({ prev, next, roast }) => {
   return (
     <div className="pagination">
       {link(prev, "前へ", roast)}

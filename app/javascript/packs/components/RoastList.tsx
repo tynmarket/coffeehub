@@ -6,12 +6,10 @@ interface Props {
   open: boolean;
 }
 
-export const RoastList: React.StatelessComponent<Props> = (props) => {
+export const RoastList: React.StatelessComponent<Props> = props => {
   return (
     <div className={`roast-select ${props.open ? "show" : null}`}>
-      <div className="roast-select-title">
-        ロースト度合い
-      </div>
+      <div className="roast-select-title">ロースト度合い</div>
       <ul className="roast-list">
         <li className="roast-list-item">
           <Link to={path.cinnamonRoast} className="coffee-color-cinnamon">

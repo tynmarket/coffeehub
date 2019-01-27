@@ -1,6 +1,14 @@
 {
-  "extends": ["tslint:recommended", "tslint-react"],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
+    "prettier": [
+      true,
+      {
+        "trailingComma": "es5",
+        "printWidth": 100
+      }
+    ],
     "interface-name": null,
     "radix": null
   }

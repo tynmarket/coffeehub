@@ -13,15 +13,19 @@ export const Footer: React.StatelessComponent<{}> = () => {
       <div className="github">
         <a href="https://github.com/tynmarket/coffeehub" target="_blank">
           <img src={GitHub} />
-         </a>
+        </a>
       </div>
       <div className="copyright-flaticon">
         Icons made by
         <a href="http://www.freepik.com" title="Freepik" target="_blank">
-        &nbsp;Freepik&nbsp;
+          &nbsp;Freepik&nbsp;
         </a>
         is licensed by
-        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+        >
           CC 3.0 BY
         </a>
       </div>
