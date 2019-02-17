@@ -16,15 +16,14 @@ default: &default
   collation: utf8mb4_general_ci
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: <%= ENV["DB_PASSWORD"] %>
+  host: 127.0.0.1
 
 production:
   <<: *default
   host: <%= ENV["DB_HOST"] %>
   database: coffeehub
   username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
 
 development:
   <<: *default

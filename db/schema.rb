@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_06_27_073428) do
 
-  create_table "coffees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "coffees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.integer "site_id", null: false
     t.string "path", null: false
     t.string "country", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_06_27_073428) do
     t.index ["site_id"], name: "index_coffees_site_id"
   end
 
-  create_table "sites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "sites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "url", null: false
     t.datetime "created_at", null: false
