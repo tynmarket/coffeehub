@@ -13,8 +13,8 @@ function endpoint(roast: string, query: string = null): string {
 
 export async function getCoffees(roast: string = null, query: string = null): Promise<Coffee[]> {
   try {
-    const response = await axios.get(endpoint(roast, query));
-    return response.data as Coffee[];
+    const response = await axios.get<Coffee[]>(endpoint(roast, query));
+    return response.data;
   } catch (error) {
     // TODO: error report
   }
