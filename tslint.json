@@ -10,6 +10,8 @@
       }
     ],
     "interface-name": null,
+    "jsx-no-lambda": false,
+    "no-shadowed-variable": false,
     "radix": null
   }
 }
