@@ -25,6 +25,7 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
   const query = location.search;
 
   useEffect(() => {
+    setCoffees([]);
     setShowSpinner(true);
     window.scrollTo(0, 0);
 
