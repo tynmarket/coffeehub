@@ -42,7 +42,12 @@ jobs:
           paths:
             - ~/.cache/yarn
 
-      # Run tslint
+      # Check type
+      - run:
+          name: npx tsc
+          command: npx tsc
+
+      # Run eslint
       - run:
           name: yarn lint
           command: yarn lint
