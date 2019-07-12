@@ -1,4 +1,3 @@
-import "@babel/polyfill"
 import "url-search-params-polyfill";
 import * as ReactDOM from "react-dom";
 import "../styles/application";

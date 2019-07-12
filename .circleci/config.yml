@@ -5,6 +5,9 @@ jobs:
     working_directory: ~/app
     docker:
       - image: circleci/ruby:2.5.3-node-browsers
+        environment:
+          RAILS_ENV: test
+          TZ: Asia/Tokyo
 
     steps:
       - checkout
@@ -39,15 +42,10 @@ jobs:
           paths:
             - ~/.cache/yarn
 
-      # Run rubocop
-      - run:
-          name: bin/rubocop
-          command: bin/rubocop
-
       # Run tslint
       - run:
-          name: yarn tslint
-          command: yarn tslint
+          name: yarn lint
+          command: yarn lint
 
       # Run stylelint
       - run:
@@ -58,3 +56,8 @@ jobs:
       - run:
           name: yarn build
           command: yarn build
+
+      # Run rubocop
+      - run:
+          name: bin/rubocop
+          command: bin/rubocop
