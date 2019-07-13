@@ -1,5 +1,6 @@
 # docker build -t tynmarket/coffeehub --build-arg rails_master_key=$RAILS_MASTER_KEY_COFFEEHUB .
 # docker run --rm --name coffeehub -p 8080:8080 --env DB_HOST=$DB_HOST_COFFEEHUB --env DB_USERNAME=$DB_USERNAME --env DB_PASSWORD=$DB_PASSWORD --env DISABLE_MACKEREL=true --env GMAIL_USERNAME=$GMAIL_USERNAME --env GMAIL_PASSWORD=$GMAIL_PASSWORD --env RAILS_ENV=production --env PORT=8080 --env RAILS_SERVE_STATIC_FILES=true tynmarket/coffeehub
+# gcloud beta run deploy coffeehub --image gcr.io/tynmarket-195002/github-tynmarket-coffeehub-stg:latest --platform managed --allow-unauthenticated --set-env-vars DB_HOST=$DB_HOST --set-env-vars DB_USERNAME=$DB_USERNAME --set-env-vars DB_PASSWORD=$DB_PASSWORD --set-env-vars DISABLE_MACKEREL=true --set-env-vars GMAIL_USERNAME=$GMAIL_USERNAME --set-env-vars GMAIL_PASSWORD=$GMAIL_PASSWORD --set-env-vars RAILS_ENV=staging --set-env-vars RAILS_LOG_TO_STDOUT=true --set-env-vars RAILS_SERVE_STATIC_FILES=true
 
 FROM ruby:2.5.3-alpine3.8
 
