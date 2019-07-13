@@ -39,8 +39,6 @@ RUN apk add --update --no-cache --virtual=build-dependencies \
     tar xvzf mackerel-agent-latest.tar.gz && \
     apk del build-dependencies
 
-RUN echo aaa
-
 COPY . /app
 COPY docker/default.conf /etc/nginx/conf.d
 COPY docker/nginx.conf /etc/nginx
