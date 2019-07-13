@@ -54,7 +54,7 @@ module WebpackHelper
   end
 
   def manifest
-    return @manifest ||= JSON.parse(pro_manifest) if Rails.env.production? || Rails.env.staging?
+    return @manifest ||= JSON.parse(pro_manifest)# if Rails.env.production? || Rails.env.staging?
     return @manifest ||= JSON.parse(dev_manifest) if Rails.env.development?
 
     @manifest ||= JSON.parse(test_manifest)
