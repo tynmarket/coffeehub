@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/kaniko-project/executor:latest'
+  args:
+    - --destination=gcr.io/tynmarket-195002/github-tynmarket-coffeehub-stg
+    - --build-arg=rails_master_key=${_RAILS_MASTER_KEY}
+    - --cache=true
