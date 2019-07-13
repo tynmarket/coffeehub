@@ -54,7 +54,6 @@ RUN bundle exec rails assets:precompile RAILS_ENV=production && \
     yarn build && \
     rm -rf node_modules
 
-ENTRYPOINT nginx && \
-           ./mackerel-agent.sh && \
+ENTRYPOINT ./mackerel-agent.sh && \
            crond && \
-           bundle exec puma -b unix:///var/run/puma.sock
+           bundle exec puma -b tcp://0.0.0.0:$PORT
