@@ -49,6 +49,7 @@ ARG rails_master_key
 
 ENV TZ Asia/Tokyo
 ENV RAILS_MASTER_KEY $rails_master_key
+ENV PORT 80
 
 RUN bundle exec rails assets:precompile RAILS_ENV=production && \
     yarn build && \
