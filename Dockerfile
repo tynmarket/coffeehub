@@ -54,8 +54,6 @@ RUN bundle exec rails assets:precompile RAILS_ENV=production && \
     yarn build && \
     rm -rf node_modules
 
-EXPOSE 8080
-
 ENTRYPOINT bundle exec rails db:migrate && \
            nginx && \
            ./mackerel-agent.sh && \
