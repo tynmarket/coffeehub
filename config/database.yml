@@ -25,6 +25,12 @@ production:
   database: coffeehub
   username: <%= ENV["DB_USERNAME"] %>
 
+staging:
+  <<: *default
+  host: <%= ENV["DB_HOST"] %>
+  database: coffeehub
+  username: <%= ENV["DB_USERNAME"] %>
+
 development:
   <<: *default
   database: coffeehub_development
