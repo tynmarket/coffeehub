@@ -1,3 +1,5 @@
+# docker build -t tynmarket/coffeehub --build-arg rails_master_key=$RAILS_MASTER_KEY_COFFEEHUB .
+
 FROM ruby:2.5.3-alpine3.8
 
 WORKDIR /app
