@@ -54,7 +54,7 @@ RUN bundle exec rails assets:precompile RAILS_ENV=production && \
     rm -rf node_modules
 
 # Cloud Runではなくローカルで動作確認のため
-EXPOSE $PORT
+# EXPOSE $PORT
 
 ENTRYPOINT ./mackerel-agent.sh && \
            crond && \
