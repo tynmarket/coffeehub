@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/kaniko-project/executor:latest'
   args:
-    - --destination=gcr.io/tynmarket-195002/github-tynmarket-coffeehub:$COMMIT_SHA
+    - --destination=gcr.io/tynmarket-195002/github-tynmarket-coffeehub
     - --build-arg=rails_master_key=${_RAILS_MASTER_KEY}
     - --cache=true
