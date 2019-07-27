@@ -12,22 +12,18 @@ RUN apk upgrade --no-cache && \
       mariadb-connector-c-dev \
       nodejs \
       yarn \
-      logrotate \
       tzdata \
       bash \
       less \
       git && \
     mkdir -p /app/tmp/cache && \
     mkdir -p /app/tmp/pids && \
-    mkdir -p /app/tmp/sockets && \
-    mkdir -p /app/log
+    mkdir -p /app/tmp/sockets
 
 COPY Gemfile Gemfile.lock yarn.lock /app/
 
 RUN apk add --update --no-cache --virtual=build-dependencies \
       build-base \
-      curl \
-      tar \
       linux-headers \
       libxml2-dev \
       libxslt-dev \
@@ -37,12 +33,9 @@ RUN apk add --update --no-cache --virtual=build-dependencies \
     gem install bundler && \
     bundle install -j4 --deployment --path /usr/local/bundle --without development test && \
     yarn install --production && \
-    curl -LO https://mackerel.io/file/agent/tgz/mackerel-agent-latest.tar.gz && \
-    tar xvzf mackerel-agent-latest.tar.gz && \
     apk del build-dependencies
 
 COPY . /app
-COPY docker/mackerel-agent.sh /app
 
 ARG rails_master_key
 
@@ -53,9 +46,4 @@ RUN bundle exec rails assets:precompile RAILS_ENV=production && \
     yarn build && \
     rm -rf node_modules
 
-# Cloud Runではなくローカルで動作確認のため
-# EXPOSE $PORT
-
-ENTRYPOINT ./mackerel-agent.sh && \
-           crond && \
-           bundle exec puma -b tcp://0.0.0.0:$PORT
+ENTRYPOINT bundle exec puma -b tcp://0.0.0.0:$PORT
