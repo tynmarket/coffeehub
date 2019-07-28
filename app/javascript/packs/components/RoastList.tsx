@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { path } from "../path/coffees_path";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { path } from '../path/coffees_path';
 
 interface Props {
   open: boolean;
@@ -8,7 +8,7 @@ interface Props {
 
 export const RoastList: React.StatelessComponent<Props> = props => {
   return (
-    <div className={`roast-select ${props.open ? "show" : null}`}>
+    <div className={`roast-select ${props.open ? 'show' : null}`}>
       <div className="roast-select-title">ロースト度合い</div>
       <ul className="roast-list">
         <li className="roast-list-item">

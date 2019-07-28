@@ -13,11 +13,11 @@ export interface Coffee {
 
 export function roastToText(roast: string): string {
   return {
-    cinnamon: "シナモン",
-    city: "シティ",
-    french: "フレンチ",
-    fullcity: "フルシティ",
-    high: "ハイ",
-    medium: "ミディアム",
+    cinnamon: 'シナモン',
+    city: 'シティ',
+    french: 'フレンチ',
+    fullcity: 'フルシティ',
+    high: 'ハイ',
+    medium: 'ミディアム',
   }[roast];
 }

@@ -1,12 +1,16 @@
-import GitHub from "images/github.svg";
-import * as React from "react";
+import GitHub from 'images/github.svg';
+import * as React from 'react';
 
 export const Footer: React.StatelessComponent<{}> = () => {
   return (
     <footer className="footer">
       <p className="copyright">
         ©
-        <a className="twitter-name" href="https://twitter.com/tynmarket" target="_blank">
+        <a
+          className="twitter-name"
+          href="https://twitter.com/tynmarket"
+          target="_blank"
+        >
           tynmarket
         </a>
       </p>

@@ -1,12 +1,12 @@
-import * as React from "react";
-import { useEffect, useState } from "react";
-import useReactRouter from "use-react-router";
-import { getCoffees } from "../api/cofee_api";
-import { roastToText } from "../model/coffee";
-import { Coffee } from "../model/coffee";
-import { ListItem } from "./ListItem";
-import { Pagination } from "./Pagination";
-import { RoastList } from "./RoastList";
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import useReactRouter from 'use-react-router';
+import { getCoffees } from '../api/cofee_api';
+import { roastToText } from '../model/coffee';
+import { Coffee } from '../model/coffee';
+import { ListItem } from './ListItem';
+import { Pagination } from './Pagination';
+import { RoastList } from './RoastList';
 
 const PER_PAGE = 10;
 
@@ -21,7 +21,7 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
   const roast = match.params.roast;
   const roastText = roastToText(roast);
   const params = new URLSearchParams(location.search);
-  const page = params.get("page");
+  const page = params.get('page');
   const query = location.search;
 
   useEffect(() => {
@@ -45,7 +45,9 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
     if (i !== 0 && month !== monthPrev) {
       list.push(
         <div className="section-arrival" key={length + 1}>
-          <span className={`section-arrival-title coffee-color-${roast || "high"}`}>
+          <span
+            className={`section-arrival-title coffee-color-${roast || 'high'}`}
+          >
             {`${month}月入荷のコーヒー`}
           </span>
         </div>
@@ -59,23 +61,28 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
   return (
     <section className="main-content">
       <div className="section-title-and-roast-select">
-        <h1 className={`section-title coffee-color-${roast || "high"}`}>
+        <h1 className={`section-title coffee-color-${roast || 'high'}`}>
           新着コーヒー豆一覧
           {roastText != null ? (
             <span className="hide-for-mobile">（{roastText}ロースト）</span>
           ) : null}
         </h1>
-        <span className="roast-select-button" onClick={() => setOpenRoastList(true)}>
+        <span
+          className="roast-select-button"
+          onClick={() => setOpenRoastList(true)}
+        >
           絞り込み
         </span>
         <RoastList open={openRoastList} />
         <div
-          className={`roast-select-overlay ${openRoastList ? "show" : ""}`}
+          className={`roast-select-overlay ${openRoastList ? 'show' : ''}`}
           onClick={() => setOpenRoastList(false)}
         />
       </div>
-      <div className={showSpinner ? "spinner show" : ""} />
-      <div className={`coffee-list ${list.length > 0 ? "show" : ""}`}>{list}</div>
+      <div className={showSpinner ? 'spinner show' : ''} />
+      <div className={`coffee-list ${list.length > 0 ? 'show' : ''}`}>
+        {list}
+      </div>
       <Pagination prev={prev} next={next} roast={roast} />
     </section>
   );
@@ -83,10 +90,10 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
 
 function paginationParams(length: number): number[] {
   const params = new URLSearchParams(location.search);
-  const pageStr = params.get("page");
+  const pageStr = params.get('page');
   const next = length > PER_PAGE;
 
-  if (pageStr !== null && pageStr !== "1") {
+  if (pageStr !== null && pageStr !== '1') {
     const page = parseInt(pageStr);
     return [page - 1, next ? page + 1 : null];
   } else {

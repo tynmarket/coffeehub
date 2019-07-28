@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Coffee } from "../model/coffee";
+import * as React from 'react';
+import { Coffee } from '../model/coffee';
 
 function ribbon() {
   return (
@@ -37,9 +37,13 @@ export const ListItem: React.StatelessComponent<Props> = ({ coffee }) => {
               </svg>
             </span>
             <span className="card-item-roast">{coffee.roast_text}</span>
-            <span className="card-item-roast-sufix hide-for-mobile">ロースト</span>
+            <span className="card-item-roast-sufix hide-for-mobile">
+              ロースト
+            </span>
           </div>
-          <div className="card-item-arrival-date hide-for-mobile">{coffee.arrival_date}</div>
+          <div className="card-item-arrival-date hide-for-mobile">
+            {coffee.arrival_date}
+          </div>
         </div>
         <div className="card-item-right">
           <h2 className="card-item-title">

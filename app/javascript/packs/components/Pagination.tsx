@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { roastToText } from "../model/coffee";
-import { path } from "../path/coffees_path";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { roastToText } from '../model/coffee';
+import { path } from '../path/coffees_path';
 
 function link(page: number, text: string, roast: string) {
   if (page == null) {
@@ -30,11 +30,15 @@ interface Props {
   roast: string;
 }
 
-export const Pagination: React.StatelessComponent<Props> = ({ prev, next, roast }) => {
+export const Pagination: React.StatelessComponent<Props> = ({
+  prev,
+  next,
+  roast,
+}) => {
   return (
     <div className="pagination">
-      {link(prev, "前へ", roast)}
-      {link(next, "次へ", roast)}
+      {link(prev, '前へ', roast)}
+      {link(next, '次へ', roast)}
     </div>
   );
 };
