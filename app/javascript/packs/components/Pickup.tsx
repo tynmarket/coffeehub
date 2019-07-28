@@ -1,10 +1,14 @@
-import Mui from 'images/mui.png';
 import * as React from 'react';
+import Mui from 'images/mui.png';
 
-export const Pickup: React.StatelessComponent<{}> = () => {
+export const Pickup: React.StatelessComponent<{}> = (): JSX.Element => {
   return (
     <section className="pickup">
-      <a href="http://www.mui-motosumi.co.jp" target="_blank">
+      <a
+        href="http://www.mui-motosumi.co.jp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img className="pickup-image" src={Mui} />
         <span className="pickup-note">ピックアップ</span>
         <div className="pickup-area">

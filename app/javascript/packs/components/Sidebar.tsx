@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { path } from '../path/coffees_path';
 
-export const Sidebar: React.StatelessComponent<{}> = () => {
+export const Sidebar: React.StatelessComponent<{}> = (): JSX.Element => {
   return (
     <aside className="sidebar">
       <section className="sidebar-content">

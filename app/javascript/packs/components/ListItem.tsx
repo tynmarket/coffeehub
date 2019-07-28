@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Coffee } from '../model/coffee';
 
-function ribbon() {
+function ribbon(): JSX.Element {
   return (
     <div className="ribbon_area">
       <span className="ribbon">NEW</span>
@@ -13,11 +13,18 @@ interface Props {
   coffee: Coffee;
 }
 
-export const ListItem: React.StatelessComponent<Props> = ({ coffee }) => {
+export const ListItem: React.StatelessComponent<Props> = ({
+  coffee,
+}): JSX.Element => {
   /* tslint:disable:max-line-length */
   return (
     <article>
-      <a className="card-item" href={coffee.url} target="_blank">
+      <a
+        className="card-item"
+        href={coffee.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="card-item-left">
           <div className="card-item-cup-and-shop">
             <span className="card-item-cup-wrapper">

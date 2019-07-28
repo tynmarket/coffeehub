@@ -1,7 +1,7 @@
-import Icon from 'images/icon.svg';
 import * as React from 'react';
+import Icon from 'images/icon.svg';
 
-export const Header: React.StatelessComponent<{}> = () => {
+export const Header: React.StatelessComponent<{}> = (): JSX.Element => {
   return (
     <header className="header">
       <a className="header-logo" href="/">

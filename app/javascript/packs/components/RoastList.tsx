@@ -6,7 +6,9 @@ interface Props {
   open: boolean;
 }
 
-export const RoastList: React.StatelessComponent<Props> = props => {
+export const RoastList: React.StatelessComponent<Props> = (
+  props
+): JSX.Element => {
   return (
     <div className={`roast-select ${props.open ? 'show' : null}`}>
       <div className="roast-select-title">ロースト度合い</div>

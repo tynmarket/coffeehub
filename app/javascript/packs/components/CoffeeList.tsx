@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import useReactRouter from 'use-react-router';
-import { getCoffees } from '../api/cofee_api';
-import { roastToText } from '../model/coffee';
 import { Coffee } from '../model/coffee';
 import { ListItem } from './ListItem';
 import { Pagination } from './Pagination';
 import { RoastList } from './RoastList';
+import { getCoffees } from '../api/cofee_api';
+import { roastToText } from '../model/coffee';
+import useReactRouter from 'use-react-router';
 
 const PER_PAGE = 10;
 
-export const CoffeeList: React.StatelessComponent<{}> = () => {
-  const { history, location, match } = useReactRouter<any>();
+export const CoffeeList: React.StatelessComponent<{}> = (): JSX.Element => {
+  const { location, match } = useReactRouter<any>(); // eslint-disable-line @typescript-eslint/no-explicit-any
   const [coffees, setCoffees] = useState<Coffee[]>([]);
   const [showSpinner, setShowSpinner] = useState<boolean>(false);
   const [openRoastList, setOpenRoastList] = useState<boolean>(false);
@@ -24,12 +24,12 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
   const page = params.get('page');
   const query = location.search;
 
-  useEffect(() => {
+  useEffect((): void => {
     setCoffees([]);
     setShowSpinner(true);
     window.scrollTo(0, 0);
 
-    getCoffees(roast, query).then(coffees => {
+    getCoffees(roast, query).then((coffees): void => {
       setCoffees(coffees);
       setShowSpinner(false);
     });
@@ -69,14 +69,14 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
         </h1>
         <span
           className="roast-select-button"
-          onClick={() => setOpenRoastList(true)}
+          onClick={(): void => setOpenRoastList(true)}
         >
           絞り込み
         </span>
         <RoastList open={openRoastList} />
         <div
           className={`roast-select-overlay ${openRoastList ? 'show' : ''}`}
-          onClick={() => setOpenRoastList(false)}
+          onClick={(): void => setOpenRoastList(false)}
         />
       </div>
       <div className={showSpinner ? 'spinner show' : ''} />
@@ -88,7 +88,7 @@ export const CoffeeList: React.StatelessComponent<{}> = () => {
   );
 };
 
-function paginationParams(length: number): number[] {
+function paginationParams(length: number): [number | null, number | null] {
   const params = new URLSearchParams(location.search);
   const pageStr = params.get('page');
   const next = length > PER_PAGE;
