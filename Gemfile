@@ -6,7 +6,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'lograge'
 gem 'meta-tags'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
